@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 	public Vector2 move_vector;
 	public Vector2 camera_vector;
 	
+	
+	
 	// Start is called before the first frame update
     void Start()
     {
