@@ -8,7 +8,12 @@ public class LookAtLogic : MonoBehaviour
 	public Transform character;
 	public float distance_to_target;
 	
+	Vector2 start_pos;
 	
+	void Awake()
+	{
+		start_pos = transform.localPosition;
+	}
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +32,7 @@ public class LookAtLogic : MonoBehaviour
 	    }
 	    else
 	    {
-	    	transform.localPosition = new Vector3(0,0,0);   	
+	    	transform.localPosition = start_pos; 	
 	    }
     }
 }

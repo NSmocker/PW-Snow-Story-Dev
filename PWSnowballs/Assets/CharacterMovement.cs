@@ -6,6 +6,8 @@ public class CharacterMovement : MonoBehaviour
 {
 	public CharacterController character_controller;
 	public float move_speed;
+	public float rotationSpeed = 180f;
+	public Transform character_origin;
 	public Transform direction_pointer_transform;
 
 	public void MoveByCamera(Vector2 input)
@@ -15,6 +17,35 @@ public class CharacterMovement : MonoBehaviour
 		character_controller.Move(local_direction);
 	}
 	
+	public void RotateCharacterByCamera(Vector2 input)
+	{
+	
+		if(input.magnitude>0.8)
+		{
+			// Отримати напрямок камери
+			Vector3 cameraForward = Camera.main.transform.forward;
+			Vector3 cameraRight = Camera.main.transform.right;
+
+			// Забезпечити, що рух відбувається плоско відносно землі
+			cameraForward.y = 0f;
+			cameraRight.y = 0f;
+			cameraForward.Normalize();
+			cameraRight.Normalize();
+
+			// Визначити напрямок обертання
+			Vector3 rotateDirection = input.x * cameraRight + input.y * cameraForward;
+
+			// Обертати персонажа
+			if (rotateDirection != Vector3.zero)
+			{
+				Quaternion toRotation = Quaternion.LookRotation(rotateDirection, Vector3.up);
+				character_origin.rotation = Quaternion.RotateTowards(character_origin.rotation, toRotation, rotationSpeed * Time.deltaTime);
+			}
+		}
+
+		
+	
+	}
     // Start is called before the first frame update
     void Start()
     {
