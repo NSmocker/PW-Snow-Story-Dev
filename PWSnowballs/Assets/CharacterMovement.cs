@@ -9,18 +9,24 @@ public class CharacterMovement : MonoBehaviour
 	public float rotationSpeed = 180f;
 	public Transform character_origin;
 	public Transform direction_pointer_transform;
+	public Vector3 velocity;
+	public float sprint_multipliyer;
+	
 
 	public void MoveByCamera(Vector2 input)
 	{
-		var main_direction = new Vector3(input.x,0,input.y)*move_speed;
+		if(input.magnitude>0.5)
+		{
+			var main_direction = new Vector3(input.x,0,input.y)*(move_speed+(sprint_multipliyer*10));
 		var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
 		character_controller.Move(local_direction);
+		}
 	}
 	
 	public void RotateCharacterByCamera(Vector2 input)
 	{
 	
-		if(input.magnitude>0.8)
+		if(input.magnitude>0.2)
 		{
 			// Отримати напрямок камери
 			Vector3 cameraForward = Camera.main.transform.forward;
@@ -54,7 +60,8 @@ public class CharacterMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+	{
+		sprint_multipliyer = Input.GetAxis("Sprinting");
+	    velocity = character_controller.velocity;
     }
 }

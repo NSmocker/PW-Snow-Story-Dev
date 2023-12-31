@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class AnimationSystem : MonoBehaviour
 {
+	public CharacterMovement movement_system;
 	public Animator anim_link;
-	public bool is_moving;
+	public float movement_magnitude;
+	public float sprint;
  
  
 	public void AnimateByInput(Vector2 move_info)
 	{
-		is_moving = move_info!= Vector2.zero;
+		movement_magnitude = move_info.magnitude;
+		//КОСТИЛЬ!
+		sprint = Input.GetAxis("Sprinting");
+		//КОСТИЛЬ!
 	}
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,8 @@ public class AnimationSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    anim_link.SetBool("is_moving",is_moving);
+	    anim_link.SetFloat("movement_magnitude",movement_magnitude);
+	    anim_link.SetFloat("sprint",sprint);
+	    
     }
 }
