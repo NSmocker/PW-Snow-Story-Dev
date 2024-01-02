@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54499553}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12397591, y: 0.20598309, z: -0.026318239, w: 0.9703135}
+  m_LocalRotation: {x: 0.12397594, y: 0.20598313, z: -0.026318245, w: 0.9703135}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4094,13 +4094,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ichigo Main
       objectReference: {fileID: 0}
+    - target: {fileID: 4469819488887415633, guid: 57a714cda81ab3f4cb9624d4de5ef116, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 57a714cda81ab3f4cb9624d4de5ef116, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 50ef8314a6bb5764db6d154ddac208d7, type: 2}
     - target: {fileID: 5866666021909216657, guid: 57a714cda81ab3f4cb9624d4de5ef116, type: 3}
       propertyPath: m_AnimatePhysics
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 57a714cda81ab3f4cb9624d4de5ef116, type: 3}
       propertyPath: m_WarningMessage
@@ -4240,7 +4244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555399556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1415584, y: 0.20547175, z: -0.030050743, w: 0.96790475}
+  m_LocalRotation: {x: 0.1415584, y: 0.20547175, z: -0.030050755, w: 0.96790475}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5330,7 +5334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14155841, y: 0.20547175, z: -0.030050743, w: 0.96790475}
+  m_LocalRotation: {x: 0.14155841, y: 0.20547174, z: -0.030050743, w: 0.96790475}
   m_LocalPosition: {x: -10.226638, y: 1.8289999, z: 4.6725144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5729,8 +5733,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187417046}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15914069, y: 0.20489115, z: -0.033783197, w: 0.9651697}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.35535946, y: 0.19347045, z: 0.07543746, w: 0.9113716}
+  m_LocalPosition: {x: 0.026844025, y: -1.424426, z: 0.060376167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6045,12 +6049,12 @@ MonoBehaviour:
   m_BindingMode: 5
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 8
-    m_Radius: 4
+  - m_Height: 2.46
+    m_Radius: 4.36
   - m_Height: 2.5
-    m_Radius: 8.87
+    m_Radius: 6.41
   - m_Height: -1.58
-    m_Radius: -1.45
+    m_Radius: 4.57
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 158960488}
@@ -6243,7 +6247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: -1.395452, z: -0.5769052}
+  m_FollowOffset: {x: 0, y: -1.579978, z: -4.570018}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6688,7 +6692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: -1.395452, z: -0.5769052}
+  m_FollowOffset: {x: 0, y: -1.579978, z: -4.570018}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6981,7 +6985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: -1.395452, z: -0.5769052}
+  m_FollowOffset: {x: 0, y: -1.579978, z: -4.570018}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
