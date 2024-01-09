@@ -425,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54499553}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1239759, y: 0.20598355, z: -0.026318295, w: 0.97031343}
+  m_LocalRotation: {x: 0.1239759, y: 0.20598352, z: -0.026318291, w: 0.97031343}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1328,7 +1328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555399556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1415584, y: 0.20547222, z: -0.030050812, w: 0.9679046}
+  m_LocalRotation: {x: 0.1415584, y: 0.20547219, z: -0.0300508, w: 0.9679046}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2197,7 +2197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14155841, y: 0.20547223, z: -0.030050814, w: 0.9679046}
+  m_LocalRotation: {x: 0.14155841, y: 0.20547217, z: -0.030050803, w: 0.9679046}
   m_LocalPosition: {x: -10.226639, y: 1.8289999, z: 4.672515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3197,7 +3197,7 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 0.00000027143278, y: -0.00000009916678, z: -0.00000027064803}
+      - m_Value: {x: -0.000000927205, y: -0.000000043014893, z: -0.00000031552577}
         m_Name: Camera_position
         m_Overridden: 1
     m_Vector4f:
