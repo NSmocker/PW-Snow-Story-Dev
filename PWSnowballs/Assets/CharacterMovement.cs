@@ -37,7 +37,7 @@ public class CharacterMovement : MonoBehaviour
 			cameraRight.y = 0f;
 			cameraForward.Normalize();
 			cameraRight.Normalize();
-
+			print("Trying to rotatate");
 			// Визначити напрямок обертання
 			Vector3 rotateDirection = input.x * cameraRight + input.y * cameraForward;
 

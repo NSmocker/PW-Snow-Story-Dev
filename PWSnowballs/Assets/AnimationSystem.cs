@@ -13,9 +13,7 @@ public class AnimationSystem : MonoBehaviour
 	public void AnimateByInput(Vector2 move_info)
 	{
 		movement_magnitude = move_info.magnitude;
-		//КОСТИЛЬ!
-		sprint = Input.GetAxis("Sprinting");
-		//КОСТИЛЬ!
+	
 	}
     // Start is called before the first frame update
     void Start()
