@@ -26,7 +26,7 @@ public class CharacterMovement : MonoBehaviour
 	public void RotateCharacterByCamera(Vector2 input)
 	{
 	
-		if(input.magnitude>0.2)
+		if(input.magnitude>0.4)
 		{
 			// Отримати напрямок камери
 			Vector3 cameraForward = Camera.main.transform.forward;
