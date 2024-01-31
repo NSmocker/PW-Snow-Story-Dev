@@ -14,13 +14,13 @@ public class CharacterMovement : MonoBehaviour
 	
 
 	public void MoveByCamera(Vector2 input)
-	{
+	{/*
 		if(input.magnitude>0.5)
 		{
 			var main_direction = new Vector3(input.x,0,input.y)*(move_speed+(sprint_multipliyer*10));
 		var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
 		character_controller.Move(local_direction);
-		}
+		}*/
 	}
 	
 	public void RotateCharacterByCamera(Vector2 input)
@@ -61,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-		sprint_multipliyer = Input.GetAxis("Sprinting");
+		/*sprint_multipliyer = Input.GetAxis("Sprint");*/
 	    velocity = character_controller.velocity;
     }
 }
