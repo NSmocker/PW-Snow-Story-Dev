@@ -18,14 +18,20 @@ public class AnimationSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		movement_system.on_jump.AddListener(AnimateJump);
         
     }
+	void AnimateJump()
+	{
+		anim_link.SetTrigger("jump");
+	}
 
     // Update is called once per frame
     void Update()
     {
 	    anim_link.SetFloat("movement_magnitude",movement_magnitude);
 	    anim_link.SetBool("sprint",sprint);
+		anim_link.SetBool("grounded",movement_system.groundChecker.isGrounded);
 	    
     }
 }
