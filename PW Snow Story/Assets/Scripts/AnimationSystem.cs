@@ -29,6 +29,7 @@ public class AnimationSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		anim_link.applyRootMotion = movement_system.groundChecker.isGrounded;
 	    anim_link.SetFloat("movement_magnitude",movement_magnitude);
 	    anim_link.SetBool("sprint",sprint);
 		anim_link.SetBool("grounded",movement_system.groundChecker.isGrounded);

@@ -17,19 +17,20 @@ public class CharacterMovement : MonoBehaviour
 	public Vector3 velocity;
 	public float sprint_multipliyer;
 	bool second_jump_maked;
+
 	public Vector3 gravity;
-	public Vector3 gravity_scaler = new Vector3(1f,1f,1f); 
-	public float gravity_accelerator=0.5f; 
+	public float gravity_multiplier; 
+
 	
 
 	public void MoveByCamera(Vector2 input)
-	{/*
-		if(input.magnitude>0.5)
+	{ 
+		if(input.magnitude>0.5 && !groundChecker.isGrounded)
 		{
-		var main_direction = new Vector3(input.x,0,input.y)*(move_speed+(sprint_multipliyer*10));
+		var main_direction = new Vector3(input.x,0,input.y)*(move_speed);
 		var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
-		character_controller.Move(local_direction);
-		}*/
+		character_controller.Move(local_direction*Time.deltaTime);
+		} 
 	}
 	
 	public void MakeJump()
@@ -38,25 +39,33 @@ public class CharacterMovement : MonoBehaviour
     if (groundChecker.isGrounded)
     {
         second_jump_maked = false;
-        gravity.y = jump_force;
+        velocity.y = jump_force;
     }
     else if (!second_jump_maked && !groundChecker.isGrounded)
     {
         // Start the second jump
         second_jump_maked = true;
-	    character_controller.SimpleMove(Vector3.zero);
-        gravity.y = jump_force;
+        velocity.y = jump_force;
     }
 		 
 	}
 	public void MakeGravity()
 	{
-		if (gravity.y>-20f)
+		 
+
+		if ( groundChecker.isGrounded && gravity.y< 0f)
 		{
 		
-		  gravity.y -= 9.8f * Time.deltaTime;
-		  character_controller.Move(gravity*gravity_accelerator);
+		  gravity.y = -1 ;
 		}
+		else
+		{
+		 velocity += gravity * Time.deltaTime * gravity_multiplier ;
+		}
+		 
+		character_controller.Move(velocity*Time.deltaTime);
+		
+		
 	}
 	public void RotateCharacterByCamera(Vector2 input)
 	{
@@ -99,8 +108,7 @@ public class CharacterMovement : MonoBehaviour
 	{ 
 		MakeGravity();
 		/*sprint_multipliyer = Input.GetAxis("Sprint");*/
-	    velocity = character_controller.velocity;
-		
+	   
 		if(Input.GetButtonDown("Jump"))on_jump.Invoke();
     }
 }
