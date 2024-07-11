@@ -4099,15 +4099,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8912691712786731386, guid: f4ab5f61471320a4f918507cf5c75ff1, type: 3}
       propertyPath: jump_force
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8912691712786731386, guid: f4ab5f61471320a4f918507cf5c75ff1, type: 3}
       propertyPath: move_speed
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8912691712786731386, guid: f4ab5f61471320a4f918507cf5c75ff1, type: 3}
       propertyPath: gravity_multiplier
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8912691712786731386, guid: f4ab5f61471320a4f918507cf5c75ff1, type: 3}
       propertyPath: gravity_accelerator
