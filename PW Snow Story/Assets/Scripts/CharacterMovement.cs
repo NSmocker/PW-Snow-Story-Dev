@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class CharacterMovement : MonoBehaviour
 {
-	
-	public UnityEvent on_jump;
+
+	public UnityEvent OnJump;
 	public CharacterController character_controller;
 	public GroundChecker groundChecker;
 	public float move_speed;
@@ -27,20 +27,21 @@ public class CharacterMovement : MonoBehaviour
 	{ 
 		if(input.magnitude>0.5 && !groundChecker.isGrounded)
 		{
-		var main_direction = new Vector3(input.x,0,input.y)*(move_speed);
+		var main_direction = new Vector3(input.x,0,input.y)*move_speed;
 		var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
 		character_controller.Move(local_direction*Time.deltaTime);
 		} 
 	}
 	
 	public void MakeJump()
-	{	 
-
+	{
+	
     if (groundChecker.isGrounded)
     {
         second_jump_maked = false;
         velocity.y = jump_force;
     }
+
     else if (!second_jump_maked && !groundChecker.isGrounded)
     {
         // Start the second jump
@@ -60,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
 		}
 		else
 		{
-		 velocity += gravity * Time.deltaTime * gravity_multiplier ;
+		  velocity += gravity * Time.deltaTime * gravity_multiplier ;
 		}
 		 
 		character_controller.Move(velocity*Time.deltaTime);
@@ -99,7 +100,7 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        on_jump.AddListener(MakeJump);
+		OnJump.AddListener(MakeJump);
 		 
     }
 
@@ -107,8 +108,7 @@ public class CharacterMovement : MonoBehaviour
     void Update()
 	{ 
 		MakeGravity();
-		/*sprint_multipliyer = Input.GetAxis("Sprint");*/
-	   
-		if(Input.GetButtonDown("Jump"))on_jump.Invoke();
+		if (Input.GetButtonDown("Jump")) OnJump.Invoke();
+	
     }
 }
