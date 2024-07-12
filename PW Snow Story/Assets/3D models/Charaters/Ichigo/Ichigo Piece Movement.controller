@@ -254,21 +254,21 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Jog
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -219852397295193860}
   - {fileID: -947372027996735763}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: af22410708f989245b3537ab82e3a6db, type: 3}
+  m_Motion: {fileID: 7400000, guid: 69a33d6684df8404fa77bcf70d466afa, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -657,7 +657,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 39719f48eb3a28e439e597b1280cd58f, type: 3}
+  m_Motion: {fileID: 7400000, guid: d7acf80ac0fb05649ab15b50ce46cc28, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
