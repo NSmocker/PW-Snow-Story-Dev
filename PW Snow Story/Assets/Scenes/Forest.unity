@@ -8804,9 +8804,9 @@ Cloth:
   m_BendingStiffness: 1
   m_UseTethers: 1
   m_UseGravity: 1
-  m_Damping: 0
-  m_ExternalAcceleration: {x: 0, y: 0, z: 0}
-  m_RandomAcceleration: {x: 0, y: 0, z: 0}
+  m_Damping: 0.65
+  m_ExternalAcceleration: {x: 5, y: 5, z: 2}
+  m_RandomAcceleration: {x: 5, y: 5, z: 2}
   m_WorldVelocityScale: 0.05
   m_WorldAccelerationScale: 0.1
   m_Friction: 0.5
@@ -11094,7 +11094,7 @@ CapsuleCollider:
   m_Radius: 0.0008
   m_Height: 0.005
   m_Direction: 1
-  m_Center: {x: 0, y: 0.003, z: 0}
+  m_Center: {x: 0.0003, y: 0.003, z: 0}
 --- !u!1 &1681174813
 GameObject:
   m_ObjectHideFlags: 0
@@ -11590,8 +11590,8 @@ Cloth:
   m_UseTethers: 1
   m_UseGravity: 1
   m_Damping: 0
-  m_ExternalAcceleration: {x: 5, y: 5, z: 0}
-  m_RandomAcceleration: {x: 5, y: 5, z: 0}
+  m_ExternalAcceleration: {x: 5, y: 5, z: 2}
+  m_RandomAcceleration: {x: 5, y: 5, z: 2}
   m_WorldVelocityScale: 0.08
   m_WorldAccelerationScale: 0.2
   m_Friction: 0.5
