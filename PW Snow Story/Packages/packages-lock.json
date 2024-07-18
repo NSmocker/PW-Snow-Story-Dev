@@ -18,14 +18,14 @@
       "hash": "aa14664642f2fc99625ceea5e03744a33411e636"
     },
     "com.readyplayerme.core": {
-      "version": "https://github.com/readyplayerme/rpm-unity-sdk-core.git#v7.0.0",
+      "version": "https://github.com/readyplayerme/rpm-unity-sdk-core.git#v7.1.0",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.cloud.gltfast": "6.0.1",
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "0e67f78cf30434040a8f8258a0de4eef967987d8"
+      "hash": "82b076c0d94fa738e2bff5ed61de854f20c1a75e"
     },
     "com.siccity.gltfutility": {
       "version": "https://github.com/Siccity/GLTFUtility.git",
