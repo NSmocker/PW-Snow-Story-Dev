@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 public class CharacterMovement : MonoBehaviour
 {
 
 	public AudioClip jump_sound;
 	public AudioClip second_jump_sound;
+	public GameObject VFX_jump;
 	
 	public AudioSource audio_source;
 	public UnityEvent OnJump;
@@ -55,6 +57,8 @@ public class CharacterMovement : MonoBehaviour
         second_jump_maked = true;
         velocity.y = jump_force;
 		audio_source.PlayOneShot(second_jump_sound);
+		var vfx = Instantiate(VFX_jump, transform.position, Quaternion.identity);
+		Destroy(vfx, 4f);
 		OnJump.Invoke();
     }
 		 
