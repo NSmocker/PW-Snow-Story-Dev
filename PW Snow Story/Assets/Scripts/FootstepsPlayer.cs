@@ -11,6 +11,8 @@ public class FootstepsPlayer : MonoBehaviour
 	public void PlayFootstepSound()
 	{
 		if(footstep_id>1)footstep_id=0;
+        var random_pitch = Random.Range(0.9f, 1.1f);
+        sound_source.pitch = random_pitch;
 		sound_source.PlayOneShot(footsteps[footstep_id]);
 	}
 	

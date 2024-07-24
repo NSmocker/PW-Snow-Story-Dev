@@ -6,6 +6,10 @@ using UnityEngine.Events;
 public class CharacterMovement : MonoBehaviour
 {
 
+	public AudioClip jump_sound;
+	public AudioClip second_jump_sound;
+	
+	public AudioSource audio_source;
 	public UnityEvent OnJump;
 	public CharacterController character_controller;
 	public GroundChecker groundChecker;
@@ -40,6 +44,9 @@ public class CharacterMovement : MonoBehaviour
     {
         second_jump_maked = false;
         velocity.y = jump_force;
+		audio_source.PlayOneShot(jump_sound);
+		OnJump.Invoke();
+
     }
 
     else if (!second_jump_maked && !groundChecker.isGrounded)
@@ -47,6 +54,8 @@ public class CharacterMovement : MonoBehaviour
         // Start the second jump
         second_jump_maked = true;
         velocity.y = jump_force;
+		audio_source.PlayOneShot(second_jump_sound);
+		OnJump.Invoke();
     }
 		 
 	}
@@ -100,7 +109,6 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		OnJump.AddListener(MakeJump);
 		 
     }
 
@@ -108,7 +116,6 @@ public class CharacterMovement : MonoBehaviour
     void Update()
 	{ 
 		MakeGravity();
-		if (Input.GetButtonDown("Jump")) OnJump.Invoke();
-	
+		if (Input.GetButtonDown("Jump")) MakeJump(); 	
     }
 }
