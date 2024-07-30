@@ -33,9 +33,9 @@ public class CharacterMovement : MonoBehaviour
 	{ 
 		if(input.magnitude>0.5 && !groundChecker.isGrounded)
 		{
-		var main_direction = new Vector3(input.x,0,input.y)*move_speed;
-		var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
-		character_controller.Move(local_direction*Time.deltaTime);
+			var main_direction = new Vector3(input.x,0,input.y)*move_speed;
+			var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
+			character_controller.Move(local_direction*Time.deltaTime);
 		} 
 	}
 	
@@ -84,7 +84,7 @@ public class CharacterMovement : MonoBehaviour
 	public void RotateCharacterByCamera(Vector2 input)
 	{
 	
-		if(input.magnitude>0.4)
+		if(input.magnitude>0.2)
 		{
 			// Отримати напрямок камери
 			Vector3 cameraForward = Camera.main.transform.forward;

@@ -22,10 +22,10 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationCompression: 0
+    animationRotationError: 10
+    animationPositionError: 10
+    animationScaleError: 10
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
@@ -52,7 +52,7 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000000000000000000001000000010000000000000000000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
       - time: 0.34893617
@@ -1169,13 +1169,13 @@ ModelImporter:
       position: {x: 0.000000001864842, y: 0.10464973, z: -8.056058e-10}
       rotation: {x: -0, y: -0, z: -0, w: 1}
       scale: {x: 1.0000013, y: 0.99999946, z: 1.0000002}
-    armTwist: 0.5
+    armTwist: 0.507
     foreArmTwist: 0.5
     upperLegTwist: 0.5
     legTwist: 0.5
-    armStretch: 0.05
+    armStretch: 0
     legStretch: 0.05
-    feetSpacing: 0
+    feetSpacing: 0.005
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
