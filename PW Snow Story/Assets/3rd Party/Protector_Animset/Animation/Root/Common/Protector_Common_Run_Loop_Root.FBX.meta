@@ -505,7 +505,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 1
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -524,7 +524,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      hasAdditiveReferencePose: 0
+      hasAdditiveReferencePose: 1
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
@@ -683,7 +683,7 @@ ModelImporter:
         weight: 0
       maskType: 1
       maskSource: {fileID: 31900000, guid: aea0d102b57ed1140b0616a6b146e6a5, type: 2}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 9.06
     isReadable: 1
   meshes:
     lODScreenPercentages: []
