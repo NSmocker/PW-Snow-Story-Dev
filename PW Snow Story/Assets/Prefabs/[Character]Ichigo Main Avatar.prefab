@@ -12357,11 +12357,9 @@ Transform:
   - {fileID: 6262130447482723000}
   - {fileID: 3758405470170762396}
   - {fileID: 3882852206268791788}
-  - {fileID: 6931975716218260854}
   - {fileID: 2056732855499219348}
   - {fileID: 4681404413188768734}
   - {fileID: 4221752361722970566}
-  - {fileID: 6323601720167842730}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5139211758444810644
@@ -13936,6 +13934,7 @@ Transform:
   - {fileID: 3405697292251924007}
   - {fileID: 2817008081776189600}
   - {fileID: 1390066118155272521}
+  - {fileID: 6931975716218260854}
   m_Father: {fileID: 5284172066236511631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8930238220274287713
@@ -14425,107 +14424,53 @@ ParentConstraint:
   m_Sources:
   - sourceTransform: {fileID: 7926723936697257198}
     weight: 1
---- !u!1001 &5785800883616490561
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4808666762220650762}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.42
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.236
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.000000037748947
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 3269aa5c96a7d77458205bd26ba08937, type: 2}
-    - target: {fileID: 919132149155446097, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      propertyPath: m_Name
-      value: Ichigo Hair (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
---- !u!4 &6323601720167842730 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-  m_PrefabInstance: {fileID: 5785800883616490561}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7474262697499929245
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 4808666762220650762}
+    m_TransformParent: {fileID: 7926723936697257198}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.010000001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.009999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0137721
+      value: -0.00007461946
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5327809
+      value: 0.0006770919
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.023553476
+      value: -0.00012524813
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99891037
+      value: 0.9596198
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.013796467
+      value: -0.2753451
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.044574883
+      value: -0.057334904
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0009955036
+      value: 0.0052558454
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14543,6 +14488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ichigo Hair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7511558181221131132, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
     m_RemovedGameObjects: []
@@ -14554,9 +14503,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5088640736802961271}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5283249322422209514}
   m_SourcePrefab: {fileID: 100100000, guid: 4c985a92641847644a2150bce1cbf0a4, type: 3}
 --- !u!4 &6931975716218260854 stripped
 Transform:
@@ -14631,7 +14577,7 @@ Cloth:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744084159376824268}
-  m_Enabled: 0
+  m_Enabled: 1
   m_StretchingStiffness: 1
   m_BendingStiffness: 1
   m_UseTethers: 1
@@ -15574,30 +15520,3 @@ Cloth:
   - {x: 0.6666667, y: 0.16666667, z: 0.16666667}
   - {x: 0.5, y: 0.5, z: 0}
   m_VirtualParticleIndices: 
---- !u!1773428102 &5283249322422209514
-ParentConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7744084159376824268}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Weight: 1
-  m_TranslationAtRest: {x: -0.0044, y: 1.5685, z: 0.043434143}
-  m_RotationAtRest: {x: 0.019849151, y: 1.9129121, z: -0.5942818}
-  m_TranslationOffsets:
-  - {x: -0.007461548, y: 0.06770706, z: -0.012527466}
-  m_RotationOffsets:
-  - {x: -31.860344, y: -7.641024, z: 2.8115532}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_Active: 1
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 7926723936697257198}
-    weight: 1

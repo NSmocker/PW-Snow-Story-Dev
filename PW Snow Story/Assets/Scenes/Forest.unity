@@ -11640,11 +11640,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5471014366952501940, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_FollowOffset.y
-      value: -0.9199931
+      value: -0.772829
       objectReference: {fileID: 0}
     - target: {fileID: 5471014366952501940, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -1.430014
+      value: -1.727823
       objectReference: {fileID: 0}
     - target: {fileID: 5738366799027032190, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_BindingMode
@@ -11652,11 +11652,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5738366799027032190, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_FollowOffset.y
-      value: -0.9199931
+      value: -0.772829
       objectReference: {fileID: 0}
     - target: {fileID: 5738366799027032190, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -1.430014
+      value: -1.727823
       objectReference: {fileID: 0}
     - target: {fileID: 6111979192671924566, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_ScreenY
@@ -11676,11 +11676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7930177941204389003, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_FollowOffset.y
-      value: -0.9199931
+      value: -0.772829
       objectReference: {fileID: 0}
     - target: {fileID: 7930177941204389003, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -1.430014
+      value: -1.727823
       objectReference: {fileID: 0}
     - target: {fileID: 8971295295924369538, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Follow
@@ -11700,7 +11700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971295295924369538, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Height
-      value: 3.089834
+      value: 3.154843
       objectReference: {fileID: 0}
     - target: {fileID: 8971295295924369538, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Orbits.Array.data[0].m_Radius
@@ -11708,11 +11708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971295295924369538, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Orbits.Array.data[1].m_Height
-      value: 1.007796
+      value: 1.029466
       objectReference: {fileID: 0}
     - target: {fileID: 8971295295924369538, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Orbits.Array.data[1].m_Radius
-      value: 3.239657
+      value: 3.369671
       objectReference: {fileID: 0}
     - target: {fileID: 8971295295924369538, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Orbits.Array.data[2].m_Height
@@ -22022,11 +22022,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5088640736802961271, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7744084159376824268, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7768213201669530496, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: m_Name
       value: '[Character]Ichigo Main Avatar'
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5283249322422209514, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
