@@ -35,7 +35,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.52
   tintColor:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -490,6 +490,12 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0.1
   occlusionOnlyReflectionNormalization:
+    m_OverrideState: 1
+    m_Value: 1
+  intensityMultiplier:
+    m_OverrideState: 1
+    m_Value: 1
+  skyOcclusionIntensityMultiplier:
     m_OverrideState: 1
     m_Value: 1
 --- !u!114 &3188762885786211789
