@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DirectionPointer : MonoBehaviour
 {
-	
+	public Transform point;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +14,17 @@ public class DirectionPointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	    var angles = Camera.main.transform.eulerAngles;
-	    angles.x=0;
-	    angles.z=0;
-	    transform.eulerAngles = angles;
+        if(!point)
+        {
+            var angles = Camera.main.transform.eulerAngles;
+	        angles.x=0;
+	        angles.z=0;
+	        transform.eulerAngles = angles;
+        }
+        else
+        {
+            transform.LookAt( point.position);
+        }
+	    
     }
 }

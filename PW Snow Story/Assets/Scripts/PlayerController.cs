@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 	public CharacterMovement movement_system;
 	public AnimationSystem animation_system;
 	
+	
 	public Vector2 move_vector;
 	public Vector2 camera_vector;
 	
