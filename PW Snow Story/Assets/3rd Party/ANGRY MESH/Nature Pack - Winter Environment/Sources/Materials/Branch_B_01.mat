@@ -1,34 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5131204854015594790
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Branch_B_01
-  m_Shader: {fileID: 4800000, guid: 8736a1b0792be52448ea40b40986eee6, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 1ec186d60f6d84f448453d29da8aa6de, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - _ENABLEWORLDPROJECTION_ON
-  m_InvalidKeywords:
-  - _ENABLEWIND_ON
-  - _LOD_FADE_CROSSFADE_ON
-  - _WORLDPROJECTION_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseAlbedoASmoothness:
         m_Texture: {fileID: 2800000, guid: 7a5c7636840442243aa08060dcf5431e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: ad1bad3a55e561a458fb0e792da2e6e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseNormalMap:
@@ -40,6 +54,26 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_AO_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Map:
+        m_Texture: {fileID: 2800000, guid: ad1bad3a55e561a458fb0e792da2e6e2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Metalic_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Normal:
+        m_Texture: {fileID: 2800000, guid: 594d12d14933500428be46e66629d52f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Base_Smoothness_Texture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -63,6 +97,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ExtraTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: ad1bad3a55e561a458fb0e792da2e6e2, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -79,11 +117,31 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Snow_Normal_Map:
+        m_Texture: {fileID: 2800000, guid: a6595745300d3bf46be8e5ec06d3443f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Snow_Texture:
+        m_Texture: {fileID: 2800000, guid: b94a53fe693b5ff41a047d57dc3d96ea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubsurfaceTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -129,9 +187,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - BACKFACE_NORMAL_MODE: 1
+    - Backface_Normal_Mode: 0
+    - EFFECT_BILLBOARD: 0
+    - EFFECT_EXTRA_TEX: 0
     - _AGW_WindLeavesVariation: 0
     - _AG_TranslucencyDistance: 200
+    - _AddPrecomputedVelocity: 0
+    - _AlphaClip: 1
+    - _AlphaClipThreshold: 0.083
     - _AlphaCutoff: 0.5
+    - _AlphaToMask: 1
     - _Amp: 0.78
     - _Ampl: 4.21
     - _BARKKK: 0
@@ -141,17 +207,31 @@ Material:
     - _BaseNormalIntensity: 1
     - _BaseSmoothness: 0.185
     - _BaseTreeAO: 0.5
+    - _Base_AO_Power: 1
+    - _Base_Alpha_Clip: 0.042
+    - _Base_Metalic_Power: 0
+    - _Base_Normal_Power: 0.838
+    - _Base_Smoothness_Power: 0.825
+    - _BillboardKwToggle: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
     - _BlueIntensity: 0
     - _BlueScale: 0
     - _BlueSpeed: 0
     - _BumpScale: 0.89
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _Contrastaa: 60
-    - _Cutoff: 0.3
+    - _Cull: 0
+    - _Cutoff: 0
+    - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Distance: 200
     - _DstBlend: 0
+    - _DstBlendAlpha: 0
     - _EnableWind: 1
     - _EnableWorldProjection: 1
+    - _EnvironmentReflections: 1
     - _Float0: 0
     - _Float0ttt: 1
     - _Float1: 0.677
@@ -162,8 +242,10 @@ Material:
     - _Freq: 169.73
     - _GGG: 144.09
     - _GlossMapScale: 1
-    - _Glossiness: 0.908
+    - _Glossiness: 0.323
+    - _GlossinessSource: 0
     - _GlossyReflections: 1
+    - _HueVariationKwToggle: 1
     - _Influence: 0
     - _Keyword0: 0
     - _LOD_FADE_CROSSFADE: 1
@@ -176,22 +258,35 @@ Material:
     - _Mode: 0
     - _NoiseMapStrength: 0
     - _NoiseSpeed: 1
+    - _NormalMapKwToggle: 1
     - _ObjectBounciness: 0
     - _ObjectStiffness: 0.5
     - _OcclusionStrength: 0.5
+    - _OldHueVarBehavior: 0
     - _Opacity: 0.64
     - _PETE: 0
     - _Parallax: 0.02
-    - _QueueControl: -1
+    - _QueueControl: 0
     - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _RedIntensity: 0
     - _RedScale: 0
     - _RedSpeed: 0
+    - _Shininess: 0
+    - _Smoothness: 0.5
+    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
+    - _Snow_Opacity: 1
+    - _Snow_Scale: 1
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _Speed: 0
     - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
     - _Strenght: 2
+    - _SubsurfaceIndirect: 0
+    - _SubsurfaceKwToggle: 0
+    - _Surface: 0
     - _TESTTT: 0.5
     - _TTTT: 2
     - _TTTTIMEEE: 0
@@ -231,6 +326,12 @@ Material:
     - _UVSec: 0
     - _UseWind: 1
     - _VARIATION: 2
+    - _WINDQUALITY: 4
+    - _WIND_BRANCH1: 0
+    - _WIND_BRANCH2: 0
+    - _WIND_RIPPLE: 0
+    - _WIND_SHARED: 0
+    - _WIND_SHIMMER: 0
     - _WIntensityBlue: 0
     - _WIntensityRed: 0
     - _WScaleBlue: 0
@@ -257,11 +358,13 @@ Material:
     - _WindObjectStiffness: 2
     - _WindPowerX: 3
     - _WindPowerZ: 1.59
+    - _WindQuality: 1
     - _WindTreeIntensity: 1
     - _WindTreeStiffness: 2
     - _WindTrunkAmplitude: 1.64
     - _WindTrunkStiffness: 2.31
     - _WindVariation: 0
+    - _WorkflowMode: 1
     - _WorldProjection: 1
     - _Y: -0.28
     - _ZWrite: 1
@@ -273,13 +376,17 @@ Material:
     - _tuuuur: 0
     m_Colors:
     - _BackFaceColor: {r: 1, g: 1, b: 1, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.2}
     - _NoiseMapPannerSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseMapSize: {r: 512, g: 512, b: 0, a: 0}
     - _RingPannerSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _Snow_Direction: {r: 0, g: 1.3, b: 0, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor1: {r: 1, g: 1, b: 1, a: 0}
     - _TintColor2: {r: 1, g: 0.90912783, b: 0.5294118, a: 0}
