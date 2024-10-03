@@ -116,6 +116,10 @@ public class CharacterMovement : MonoBehaviour
 		 
     }
 
+	void FixedUpdate()
+	{
+		
+	}
     // Update is called once per frame
     void Update()
 	{ 

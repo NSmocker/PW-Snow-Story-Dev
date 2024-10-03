@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
 	public CharacterMovement movement_system;
 	public AnimationSystem animation_system;
+
+
+	public GameObject inventory;
 	
 	
 	public Vector2 move_vector;
@@ -28,12 +31,23 @@ public class PlayerController : MonoBehaviour
 		animation_system.AnimateByInput(move_vector);
 	}
     // Update is called once per frame
+	void MakeAttack()
+	{
+		
+	}
+
+
+	void FixedUpdate()
+	{
+		HandleAnimation();
+	}
     void Update()
     {
 	    move_vector.x = Input.GetAxis("Horizontal");
 	    move_vector.y = Input.GetAxis("Vertical");
+		
 	    HandleMovement();
-	    HandleAnimation();
+	    
 	    
     }
 }
