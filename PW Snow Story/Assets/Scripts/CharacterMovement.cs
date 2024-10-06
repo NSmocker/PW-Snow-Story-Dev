@@ -31,11 +31,15 @@ public class CharacterMovement : MonoBehaviour
 
 	public void MoveByCamera(Vector2 input)
 	{ 
+		
+
+		
 		if(input.magnitude>0.5 && !groundChecker.isGrounded)
-		{
+		{ character_controller.Move(transform.forward*input.magnitude*move_speed*Time.deltaTime);
+			/*
 			var main_direction = new Vector3(input.x,0,input.y)*move_speed;
 			var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
-			character_controller.Move(local_direction*Time.deltaTime);
+			character_controller.Move(local_direction*Time.deltaTime);*/
 		} 
 	}
 	

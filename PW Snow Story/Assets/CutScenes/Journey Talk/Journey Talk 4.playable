@@ -28,8 +28,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ff5b15ad6e79749b3390f8a195b510, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  subtitleText: "\u0418\u0447\u0438\u0433\u043E, \u0430 \u043A\u0430\u043A \u044D\u0442\u043E,
-    \u0432\u0438\u0434\u0435\u0442\u044C \u0432 \u0442\u0440\u0438 \u0433\u043B\u0430\u0437\u0430?"
+  subtitleText: "\u0418\u0447\u0438... \u0410 \u0447\u0442\u043E \u0442\u0435\u0431\u0435
+    \u0434\u0430\u0435\u0442, \u044D\u0442\u043E\u0442 \u0442\u0440\u0435\u0442\u0438\u0439
+    \u0433\u043B\u0430\u0437?"
+--- !u!114 &-6819216728256314261
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+  m_Name: AudioPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 8300000, guid: 8849cefaf7239de468cf112f33e61214, type: 3}
+  m_Loop: 0
+  m_bufferingTime: 0.1
+  m_ClipProperties:
+    volume: 1
 --- !u!114 &-6522941998088496650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,8 +72,8 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 4.886666666666667
     m_ClipIn: 0
-    m_Asset: {fileID: -3252419821447778720}
-    m_Duration: 6.768
+    m_Asset: {fileID: 6525597756482065941}
+    m_Duration: 5.928
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6522941998088496650}
     m_EaseInDuration: 0
@@ -119,30 +137,13 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: "[1] \u0418\u0447\u0438\u0433\u043E"
+    m_DisplayName: "[1]\u0418\u0447\u0438\u0433\u043E"
   m_Markers:
     m_Objects: []
   m_TrackProperties:
     volume: 1
     stereoPan: 0
     spatialBlend: 0
---- !u!114 &-4115904820477765465
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
-  m_Name: AudioPlayableAsset
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: b11f8dff489f1ce408fafb2b87cb318b, type: 3}
-  m_Loop: 0
-  m_bufferingTime: 0.1
-  m_ClipProperties:
-    volume: 1
 --- !u!114 &-3919551754558914896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,8 +168,8 @@ MonoBehaviour:
   - m_Version: 1
     m_Start: 0.6146666666666667
     m_ClipIn: 0
-    m_Asset: {fileID: -4115904820477765465}
-    m_Duration: 4.272
+    m_Asset: {fileID: -6819216728256314261}
+    m_Duration: 4.224
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3919551754558914896}
     m_EaseInDuration: 0
@@ -232,7 +233,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: "[0] \u0419\u043E\u043D\u0430"
+    m_DisplayName: "[0]\u0419\u043E\u043D\u0430"
   m_Markers:
     m_Objects: []
   m_TrackProperties:
@@ -251,26 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ff5b15ad6e79749b3390f8a195b510, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  subtitleText: "\u0414\u0430 \u0442\u043E\u0447\u043D\u043E \u0442\u0430\u043A \u0436\u0435
-    \u043A\u0430\u043A \u0438 \u0432 \u0434\u0432\u0430. \u041A\u0430\u0440\u0442\u0438\u043D\u043A\u0430-\u0442\u043E,
-    \u043E\u0434\u043D\u0430 \u0438 \u0442\u0430 \u0436\u0435, \u043F\u043E\u0447\u0442\u0438."
---- !u!114 &-3252419821447778720
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
-  m_Name: AudioPlayableAsset
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: dd1e28698ca29954c86e9a3b67b7f610, type: 3}
-  m_Loop: 0
-  m_bufferingTime: 0.1
-  m_ClipProperties:
-    volume: 1
+  subtitleText: "\u0414\u0430\u0432\u0430\u0439 \u0448\u0435\u0432\u0435\u043B\u0438
+    \u043A\u0440\u044B\u043B\u0435\u0448\u043A\u0430\u043C\u0438, \u0444\u0435\u044F
+    \u0412\u0438\u043D\u043A\u0441! \u041D\u0430\u0441 \u0434\u0435\u043B\u0430 \u0436\u0434\u0443\u0442."
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +265,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: Journey Talk 3
+  m_Name: Journey Talk 4
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
@@ -455,3 +439,20 @@ MonoBehaviour:
     m_DisplayName: SubtitleClip
   m_Markers:
     m_Objects: []
+--- !u!114 &6525597756482065941
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+  m_Name: AudioPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 8300000, guid: bc523f810ce8afc4c993f7ef6ec9aaeb, type: 3}
+  m_Loop: 0
+  m_bufferingTime: 0.1
+  m_ClipProperties:
+    volume: 1
