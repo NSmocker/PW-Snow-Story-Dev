@@ -385,8 +385,8 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25000006
-  m_TransitionOffset: 0
+  m_TransitionDuration: 0.11181408
+  m_TransitionOffset: 0.046428554
   m_ExitTime: 0.3388501
   m_HasExitTime: 1
   m_HasFixedDuration: 1
@@ -610,9 +610,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0.1541284
-  m_ExitTime: 0.5174525
+  m_TransitionDuration: 0.05892545
+  m_TransitionOffset: 0.082495645
+  m_ExitTime: 0.1869283
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -920,7 +920,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.028316855
   m_TransitionOffset: 0
   m_ExitTime: 0.9331988
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1139,32 +1139,20 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8364015563130880430}
-    m_Position: {x: -460, y: 60, z: 0}
+    m_Position: {x: -250, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6060754226153813587}
-    m_Position: {x: -920, y: 350, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -5062057651381975809}
-    m_Position: {x: -460, y: 350, z: 0}
+    m_Position: {x: -950, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4826852839905261425}
-    m_Position: {x: -170, y: 350, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 8602579924251554860}
-    m_Position: {x: -460, y: 480, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8261885239929055662}
-    m_Position: {x: -690, y: 350, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 7373050716301733742}
-    m_Position: {x: -700, y: 200, z: 0}
+    m_Position: {x: -250, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6277675346132161354}
-    m_Position: {x: -180, y: 210, z: 0}
+    m_Position: {x: -250, y: 300, z: 0}
+  m_ChildStateMachines:
   - serializedVersion: 1
-    m_State: {fileID: -4928132138197856957}
-    m_Position: {x: -470, y: 180, z: 0}
-  m_ChildStateMachines: []
+    m_StateMachine: {fileID: 7192624122176017831}
+    m_Position: {x: -590, y: 410, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
@@ -1172,7 +1160,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: -460, y: 690, z: 0}
+  m_ParentStateMachinePosition: {x: -590, y: 660, z: 0}
   m_DefaultState: {fileID: 8364015563130880430}
 --- !u!1102 &6060754226153813587
 AnimatorState:
@@ -1255,6 +1243,40 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1107 &7192624122176017831
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Movement
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 7373050716301733742}
+    m_Position: {x: 0, y: -90, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8261885239929055662}
+    m_Position: {x: -250, y: 10, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5062057651381975809}
+    m_Position: {x: 0, y: 0, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8602579924251554860}
+    m_Position: {x: 0, y: 0, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4928132138197856957}
+    m_Position: {x: 0, y: 0, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 7373050716301733742}
 --- !u!1102 &7373050716301733742
 AnimatorState:
   serializedVersion: 6

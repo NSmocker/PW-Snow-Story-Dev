@@ -5,6 +5,8 @@ using UnityEngine;
 public class AnimationSystem : MonoBehaviour
 {
 	public CharacterMovement movement_system;
+
+	public SwordSystem sword_system;
 	public Animator anim_link;
 	public float movement_magnitude;
 	public bool sprint;
@@ -37,6 +39,7 @@ public class AnimationSystem : MonoBehaviour
 	    anim_link.SetFloat("movement_magnitude",movement_magnitude);
 	    anim_link.SetBool("sprint",sprint);
 		anim_link.SetBool("grounded",movement_system.groundChecker.isGrounded);
+		anim_link.SetBool("swordIsOn",sword_system.isOn);
 		 
 	 
 	    
