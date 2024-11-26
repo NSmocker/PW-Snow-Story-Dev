@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public CharacterMovement movement_system;
-	public AnimationSystem animation_system;
-
-
-	public GameObject inventory;
+	public CharacterMovement movementSystem;
+	public AnimationSystem animationSystem;
+	public InventorySystem inventorySystem;
 	
 	
-	public Vector2 move_vector;
-	public Vector2 camera_vector;
+	public Vector2 moveVector;
+	public Vector2 cameraVector;
 	
 	
 	
@@ -23,29 +21,34 @@ public class PlayerController : MonoBehaviour
     }
 	void HandleMovement()
 	{
-		movement_system.MoveByCamera(move_vector);
-		movement_system.RotateCharacterByCamera(move_vector);
+		movementSystem.MoveByCamera(moveVector);
+		movementSystem.RotateCharacterByCamera(moveVector);
 	}
-	void HandleAnimation()
+	void HandleAnimationFixedUpdate()
 	{
-		animation_system.AnimateByInput(move_vector);
+		animationSystem.AnimateByInput(moveVector);
 	}
     // Update is called once per frame
 	void MakeAttack()
 	{
 		
 	}
-
+	void UserInputUpdate()
+	{
+		moveVector.x = Input.GetAxis("Horizontal");
+	    moveVector.y = Input.GetAxis("Vertical");
+		
+	}
 
 	void FixedUpdate()
 	{
-		HandleAnimation();
+		HandleAnimationFixedUpdate();
 	}
     void Update()
     {
-	    move_vector.x = Input.GetAxis("Horizontal");
-	    move_vector.y = Input.GetAxis("Vertical");
-		
+	    
+
+		UserInputUpdate();
 	    HandleMovement();
 	    
 	    

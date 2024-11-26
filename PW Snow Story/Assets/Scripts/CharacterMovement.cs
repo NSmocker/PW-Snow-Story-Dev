@@ -87,7 +87,7 @@ public class CharacterMovement : MonoBehaviour
 	}
 	public void RotateCharacterByCamera(Vector2 input)
 	{
-	
+		if(this.enabled == false) return;
 		if(input.magnitude>0.2)
 		{
 			// Отримати напрямок камери

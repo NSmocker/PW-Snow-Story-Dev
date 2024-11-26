@@ -7,26 +7,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.hecomi.ulipsync": {
-      "version": "https://github.com/hecomi/uLipSync.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.burst": "1.4.11",
-        "com.unity.mathematics": "1.2.5"
-      },
-      "hash": "aa14664642f2fc99625ceea5e03744a33411e636"
-    },
-    "com.readyplayerme.core": {
-      "version": "https://github.com/readyplayerme/rpm-unity-sdk-core.git#v7.1.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.cloud.gltfast": "6.0.1",
-        "com.unity.nuget.newtonsoft-json": "3.0.2"
-      },
-      "hash": "82b076c0d94fa738e2bff5ed61de854f20c1a75e"
-    },
     "com.siccity.gltfutility": {
       "version": "https://github.com/Siccity/GLTFUtility.git",
       "depth": 0,
@@ -105,18 +85,6 @@
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.31"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.cloud.gltfast": {
-      "version": "6.0.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.burst": "1.8.4",
-        "com.unity.mathematics": "1.3.1",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },

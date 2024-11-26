@@ -4,44 +4,46 @@ using UnityEngine;
 
 public class AnimationSystem : MonoBehaviour
 {
-	public CharacterMovement movement_system;
+	public CharacterMovement movementSystem;
 
-	public SwordSystem sword_system;
-	public Animator anim_link;
-	public float movement_magnitude;
+	public SwordSystem swordSystem;
+	public Animator animLink;
+	public float movementMagnitude;
 	public bool sprint;
  
+    public KeyCode attackKey = KeyCode.Mouse0;
 
-
-	public void AnimateByInput(Vector2 move_info)
+	public void AnimateByInput(Vector2 moveInfo)
 	{
-		movement_magnitude = move_info.magnitude;
+		movementMagnitude = moveInfo.magnitude;
 		
 
 	}
     // Start is called before the first frame update
     void Start()
     {
-		movement_system.OnJump.AddListener(AnimateJump);
+		movementSystem.OnJump.AddListener(AnimateJump);
     }
 	void AnimateJump() 
 	{
-		anim_link.SetTrigger("jump");
+		animLink.SetTrigger("jump");
 	}
 
     // Update is called once per frame
     void Update()
     {
 
-
+		if(Time.timeScale == 0) return;
 		sprint = Input.GetButton("Sprint");
-		anim_link.applyRootMotion = movement_system.groundChecker.isGrounded;
-	    anim_link.SetFloat("movement_magnitude",movement_magnitude);
-	    anim_link.SetBool("sprint",sprint);
-		anim_link.SetBool("grounded",movement_system.groundChecker.isGrounded);
-		anim_link.SetBool("swordIsOn",sword_system.isOn);
+		animLink.applyRootMotion = movementSystem.groundChecker.isGrounded;
+	    animLink.SetFloat("movement_magnitude",movementMagnitude);
+	    animLink.SetBool("sprint",sprint);
+		animLink.SetBool("grounded",movementSystem.groundChecker.isGrounded);
+		animLink.SetBool("swordIsOn",swordSystem.isOn);
+		
+		
+		animLink.SetBool("makeAttack",Input.GetKey(attackKey));
 		 
-	 
 	    
     }
 }
