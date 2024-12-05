@@ -142,7 +142,7 @@ Material:
     - BACKFACE_NORMAL_MODE: 1
     - EFFECT_BILLBOARD: 0
     - EFFECT_EXTRA_TEX: 1
-    - _AlphaClipThreshold: 0.33
+    - _AlphaClipThreshold: 0
     - _AlphaCutoff: 0.5
     - _BaseAOIntensity: 1
     - _BaseBarkAO: 0.5
@@ -160,9 +160,9 @@ Material:
     - _Float1: 1
     - _FloatContrast: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.936
     - _GlossyReflections: 1
-    - _HueVariationKwToggle: 1
+    - _HueVariationKwToggle: 0
     - _Metallic: 0
     - _Mode: 0
     - _NormalMapKwToggle: 1
@@ -175,7 +175,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SubsurfaceIndirect: 0.25
+    - _SubsurfaceIndirect: 0.366
     - _SubsurfaceKwToggle: 0
     - _TTTTT: 0
     - _TopArrowDirection: 1
