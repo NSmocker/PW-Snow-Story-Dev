@@ -28,7 +28,7 @@ public class AnimationSystem : MonoBehaviour
 	{
 		animLink.SetTrigger("jump");
 	}
-
+	
     // Update is called once per frame
     void Update()
     {
