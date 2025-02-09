@@ -35,7 +35,7 @@ public class CharacterMovement : MonoBehaviour
 
 		
 		if(input.magnitude>0.5 && !groundChecker.isGrounded)
-		{ character_controller.Move(transform.forward*input.magnitude*move_speed*Time.deltaTime);
+		{ character_controller.Move(transform.forward*input.magnitude*move_speed*Time.fixedDeltaTime);
 			/*
 			var main_direction = new Vector3(input.x,0,input.y)*move_speed;
 			var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
@@ -49,7 +49,7 @@ public class CharacterMovement : MonoBehaviour
     if (groundChecker.isGrounded)
     {
         second_jump_maked = false;
-        velocity.y = jump_force;
+        velocity.y = jump_force*Time.fixedDeltaTime;
 		audio_source.PlayOneShot(jump_sound);
 		OnJump.Invoke();
 
@@ -59,7 +59,7 @@ public class CharacterMovement : MonoBehaviour
     {
         // Start the second jump
         second_jump_maked = true;
-        velocity.y = jump_force;
+        velocity.y = jump_force*Time.fixedDeltaTime;
 		audio_source.PlayOneShot(second_jump_sound);
 		var vfx = Instantiate(VFX_jump, transform.position, Quaternion.identity);
 		Destroy(vfx, 4f);
@@ -70,18 +70,14 @@ public class CharacterMovement : MonoBehaviour
 	public void MakeGravity()
 	{
 		 
-
-		if ( groundChecker.isGrounded && gravity.y< 0f)
+ 		velocity += gravity * Time.fixedDeltaTime * gravity_multiplier/10 ;
+		if ( groundChecker.isGrounded && velocity.y< 0f)
 		{
 		
-		  gravity.y = -1 ;
+		  velocity.y=0;
 		}
-		else
-		{
-		  velocity += gravity * Time.deltaTime * gravity_multiplier ;
-		}
-		 
-		character_controller.Move(velocity*Time.deltaTime);
+		
+		character_controller.Move(velocity);
 		
 		
 	}
@@ -122,12 +118,12 @@ public class CharacterMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		
+		MakeGravity();
 	}
     // Update is called once per frame
     void Update()
 	{ 
-		MakeGravity();
+		
 		if (Input.GetButtonDown("Jump")) MakeJump(); 	
     }
 }

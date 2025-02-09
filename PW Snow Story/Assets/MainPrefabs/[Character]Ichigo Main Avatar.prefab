@@ -2132,8 +2132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fa75c12a2550d4ea0c788be1b11566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
   animator: {fileID: 0}
   characterMovement: {fileID: 0}
+  animationSystem: {fileID: 0}
+  inventorySystem: {fileID: 0}
   radius: 5
   mineItem: {fileID: 0}
   canMine: 0
@@ -2143,6 +2146,7 @@ MonoBehaviour:
   miningEndTime: 0
   tooltip: {fileID: 0}
   mineKey: 101
+  walkingCamera: {fileID: 0}
 --- !u!1 &3262328883097595031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4289,8 +4293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fa75c12a2550d4ea0c788be1b11566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 809917643666857010}
   animator: {fileID: 5139211758444810644}
   characterMovement: {fileID: 218508246344258884}
+  animationSystem: {fileID: 1769152547205815375}
+  inventorySystem: {fileID: 9006529967262750413}
   radius: 5
   mineItem: {fileID: 0}
   canMine: 0
@@ -4300,6 +4307,7 @@ MonoBehaviour:
   miningEndTime: 0
   tooltip: {fileID: 0}
   mineKey: 101
+  walkingCamera: {fileID: 0}
 --- !u!1 &3293854418562777476
 GameObject:
   m_ObjectHideFlags: 0
@@ -10126,6 +10134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &4906856500242703241
 GameObject:
   m_ObjectHideFlags: 0
@@ -12326,14 +12335,14 @@ MonoBehaviour:
   character_controller: {fileID: 809917643666857010}
   groundChecker: {fileID: 6696600351272347377}
   move_speed: 5
-  jump_force: 10
+  jump_force: 15
   rotationSpeed: 800
   character_origin: {fileID: 4808666762220650762}
   direction_pointer_transform: {fileID: 6198491099135603873}
   velocity: {x: 0, y: 0, z: 0}
   sprint_multipliyer: 3
   gravity: {x: 0, y: -1, z: 0}
-  gravity_multiplier: 10
+  gravity_multiplier: 3
 --- !u!1 &7768213201669530496
 GameObject:
   m_ObjectHideFlags: 0
@@ -12392,7 +12401,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: bec569ab9c73bb442abdbd1f5c42b1c6, type: 3}
   m_Controller: {fileID: 9100000, guid: 50ef8314a6bb5764db6d154ddac208d7, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

@@ -43,13 +43,14 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 		HandleAnimationFixedUpdate();
+		HandleMovement();
 	}
     void Update()
     {
 	    
 
 		UserInputUpdate();
-	    HandleMovement();
+	    
 	    
 	    
     }
