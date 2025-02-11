@@ -14043,7 +14043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1755516969088824907, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.15331298
+      value: -0.15331301
       objectReference: {fileID: 0}
     - target: {fileID: 1755516969088824907, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_LocalRotation.y
@@ -14075,11 +14075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2560005807406154251, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000029304832
+      value: 0.000000014652416
       objectReference: {fileID: 0}
     - target: {fileID: 2560005807406154251, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005422676
+      value: 0.000000002711338
       objectReference: {fileID: 0}
     - target: {fileID: 2915149733978150654, guid: e8f289db5bb4d0a4593a09425f76aca1, type: 3}
       propertyPath: m_Name
@@ -27247,6 +27247,10 @@ PrefabInstance:
     - target: {fileID: 811921842836586880, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.029596746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769152547205815375, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: attackKeyStickTimeDelay
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2215529265335736274, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: m_Pitch

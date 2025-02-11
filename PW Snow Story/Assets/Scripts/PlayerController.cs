@@ -32,10 +32,12 @@ public class PlayerController : MonoBehaviour
 	public void GetSwordInArm()
 	{
 		swordSystem.SetOnArm();
+		swordSystem.isOn = true;
 	}
 	public void GetSwordInBack()
 	{
 		swordSystem.SetOnSpine();
+		swordSystem.isOn = false;
 	}
 	
     // Update is called once per frame

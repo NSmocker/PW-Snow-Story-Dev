@@ -35,12 +35,14 @@ public class MineDiggerSystem : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider hitCollider in hitColliders)
         {
-           if(hitCollider.gameObject.tag == "Mine")
+           if(hitCollider.gameObject.tag == "Mine" && !animationSystem.weaponIsOn)
             {
+                
                 mineItem = hitCollider.gameObject;
                 canMine = true;
                 tooltip.SetActive(true);
                 return;
+                  
             }
             else
             {
@@ -113,7 +115,7 @@ public class MineDiggerSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+      canMine = animationSystem.weaponIsOn;
       CheckItemsForMineUpdate();
       UserInputBingingUpdate();
       MineProccesUpdate();
