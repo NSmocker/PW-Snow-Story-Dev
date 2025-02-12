@@ -3,7 +3,7 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -170,8 +170,8 @@ Material:
     - _BaseNormalIntensity: 1
     - _BaseSmoothness: 1
     - _BaseTreeAO: 0.5
-    - _Base_AO_Power: 1
-    - _Base_Alpha_Clip: 0.3
+    - _Base_AO_Power: 1.99
+    - _Base_Alpha_Clip: 0.321
     - _Base_Metalic_Power: 0
     - _Base_Normal_Power: 1
     - _Base_Smoothness_Power: 0.859
@@ -221,7 +221,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
-    - _Snow_Opacity: 0.794
+    - _Snow_Opacity: 1
     - _Snow_Scale: 5.43
     - _SpecSource: 0
     - _SpecularHighlights: 1
@@ -276,7 +276,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 1, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Snow_Direction: {r: 0, g: 2.18, b: 0, a: 0}
+    - _Snow_Direction: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _TintColor1: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor2: {r: 1, g: 0.80689657, b: 0, a: 0}
