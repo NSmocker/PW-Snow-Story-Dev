@@ -1,10 +1,10 @@
-using Cinemachine;
+//using Cinemachine;
 using UnityEngine;
 
 public class MouseLocker : MonoBehaviour
 {
 
-    public CinemachineBrain cinemachineBrain;
+    //public CinemachineBrain cinemachineBrain;
     public bool lock_mouse;
 
 
@@ -19,7 +19,9 @@ public class MouseLocker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Cursor.lockState==CursorLockMode.Locked)cinemachineBrain.enabled = true;
         else cinemachineBrain.enabled = false;
+        */
     }
 }
