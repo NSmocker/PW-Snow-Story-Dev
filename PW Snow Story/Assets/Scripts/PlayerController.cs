@@ -39,7 +39,20 @@ public class PlayerController : MonoBehaviour
 		swordSystem.SetOnSpine();
 		swordSystem.isOn = false;
 	}
+	public void AirComboFloatStart()
+	{
+		if(!movementSystem.wasComboInFloat)
+		{
+			movementSystem.isFloating=true;
+			movementSystem.wasComboInFloat=true;
+		}
+	}
+	public void AirComboFloatEnd()
+	{
+		movementSystem.isFloating=false;
+	}
 	
+
     // Update is called once per frame
 	void MakeAttack()
 	{

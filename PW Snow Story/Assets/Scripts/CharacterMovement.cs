@@ -27,6 +27,9 @@ public class CharacterMovement : MonoBehaviour
 	public Vector3 gravity;
 	public float gravity_multiplier; 
 
+	public bool isFloating;
+	public bool wasComboInFloat;
+
 	
 
 	public void MoveByCamera(Vector2 input)
@@ -47,7 +50,7 @@ public class CharacterMovement : MonoBehaviour
 	{
 	
     if (groundChecker.isGrounded)
-    {
+    {	wasComboInFloat=false;
         second_jump_maked = false;
         velocity.y = jump_force*Time.fixedDeltaTime;
 		audio_source.PlayOneShot(jump_sound);
@@ -81,6 +84,7 @@ public class CharacterMovement : MonoBehaviour
 		
 		
 	}
+	
 	public void RotateCharacterByCamera(Vector2 input)
 	{
 		if(this.enabled == false) return;
@@ -119,6 +123,7 @@ public class CharacterMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		MakeGravity();
+		if(isFloating)velocity.y = 0;
 	}
     // Update is called once per frame
     void Update()
