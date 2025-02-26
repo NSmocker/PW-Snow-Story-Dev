@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: ae3941caaffeea249a3dbe59b8d5cc4f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -29787,7 +29787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203537558270322305, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: accelerationCurve.m_Curve.Array.data[0].inSlope
-      value: 0
+      value: 2.2855797
       objectReference: {fileID: 0}
     - target: {fileID: 7203537558270322305, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: accelerationCurve.m_Curve.Array.data[1].inSlope
@@ -29795,7 +29795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203537558270322305, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: accelerationCurve.m_Curve.Array.data[0].outSlope
-      value: 0
+      value: 2.2855797
       objectReference: {fileID: 0}
     - target: {fileID: 7203537558270322305, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: accelerationCurve.m_Curve.Array.data[1].inWeight
@@ -29807,7 +29807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7203537558270322305, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: accelerationCurve.m_Curve.Array.data[0].outWeight
-      value: 0
+      value: 0.04000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
