@@ -34,7 +34,7 @@ public class GenieFlyLogic : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        directionPointer.point= flyPoint;
+       
     }
     void FixedUpdate()
     {

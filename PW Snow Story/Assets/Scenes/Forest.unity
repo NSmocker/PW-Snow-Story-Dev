@@ -1055,8 +1055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854c73eeed8e2f8469d0265210af1a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 0}
-  camera: {fileID: 0}
 --- !u!4 &79899459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2ee8881034f2f8344a6c8fce758b5513, type: 3}
@@ -33926,6 +33924,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4413452065089184, guid: d6fcd4868a5e48d4dad8e05d335bbd2c, type: 3}
   m_PrefabInstance: {fileID: 2117920699}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2118711619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6198491099135603873, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+  m_PrefabInstance: {fileID: 8646798622151954034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2121736401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34709,6 +34712,34 @@ PrefabInstance:
       propertyPath: swordSystem
       value: 
       objectReference: {fileID: 1398590352}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: vfxJump
+      value: 
+      objectReference: {fileID: 4415090697456411149, guid: bf56c3876b102a1429c104948f295f32, type: 3}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d7c408eb9b9bc448ab461a087482967, type: 3}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 8646798622151954052}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: secondJumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7eb12749677071142bd672f8b890d44b, type: 3}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: gravityMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: characterController
+      value: 
+      objectReference: {fileID: 8646798622151954053}
+    - target: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: directionPointerTransform
+      value: 
+      objectReference: {fileID: 2118711619}
     - target: {fileID: 410689131219665250, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: 'm_BlendShapeWeights.Array.data[0]'
       value: 0
@@ -35155,6 +35186,16 @@ MonoBehaviour:
 --- !u!4 &8646798622151954051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4808666762220650762, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+  m_PrefabInstance: {fileID: 8646798622151954034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8646798622151954052 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2215529265335736274, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+  m_PrefabInstance: {fileID: 8646798622151954034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &8646798622151954053 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 809917643666857010, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
   m_PrefabInstance: {fileID: 8646798622151954034}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

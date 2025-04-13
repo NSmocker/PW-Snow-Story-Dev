@@ -7,25 +7,25 @@ using UnityEngine.VFX;
 public class CharacterMovement : MonoBehaviour
 {
 
-	public AudioClip jump_sound;
-	public AudioClip second_jump_sound;
-	public GameObject VFX_jump;
+	public AudioClip jumpSound;
+	public AudioClip secondJumpSound;
+	public GameObject vfxJump;
 	
-	public AudioSource audio_source;
+	public AudioSource audioSource;
 	public UnityEvent OnJump;
-	public CharacterController character_controller;
+	public CharacterController characterController;
 	public GroundChecker groundChecker;
-	public float move_speed;
-	public float jump_force=25f;
+	public float moveSpeed;
+	public float jumpForce=25f;
 	public float rotationSpeed = 180f;
-	public Transform character_origin;
-	public Transform direction_pointer_transform;
+
+	public Transform directionPointerTransform;
 	public Vector3 velocity;
-	public float sprint_multipliyer;
-	bool second_jump_maked;
+	public float sprintMultipliyer;
+	bool isSecondJumpMaked;
 
 	public Vector3 gravity;
-	public float gravity_multiplier; 
+	public float gravityMultiplier; 
 
 	public bool isFloating;
 	public bool wasComboInFloat;
@@ -38,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
 
 		
 		if(input.magnitude>0.5 && !groundChecker.isGrounded)
-		{ character_controller.Move(transform.forward*input.magnitude*move_speed*Time.fixedDeltaTime);
+		{ characterController.Move(transform.forward*input.magnitude*moveSpeed*Time.fixedDeltaTime);
 			/*
 			var main_direction = new Vector3(input.x,0,input.y)*move_speed;
 			var local_direction = direction_pointer_transform.TransformDirection(main_direction)*Time.deltaTime;
@@ -51,20 +51,20 @@ public class CharacterMovement : MonoBehaviour
 	
     if (groundChecker.isGrounded)
     {	wasComboInFloat=false;
-        second_jump_maked = false;
-        velocity.y = jump_force*Time.fixedDeltaTime;
-		audio_source.PlayOneShot(jump_sound);
+        isSecondJumpMaked = false;
+        velocity.y = jumpForce*Time.fixedDeltaTime;
+		audioSource.PlayOneShot(jumpSound);
 		OnJump.Invoke();
 
     }
 
-    else if (!second_jump_maked && !groundChecker.isGrounded)
+    else if (!isSecondJumpMaked && !groundChecker.isGrounded)
     {
         // Start the second jump
-        second_jump_maked = true;
-        velocity.y = jump_force*Time.fixedDeltaTime;
-		audio_source.PlayOneShot(second_jump_sound);
-		var vfx = Instantiate(VFX_jump, transform.position, Quaternion.identity);
+        isSecondJumpMaked = true;
+        velocity.y = jumpForce*Time.fixedDeltaTime;
+		audioSource.PlayOneShot(secondJumpSound);
+		var vfx = Instantiate(vfxJump, transform.position, Quaternion.identity);
 		Destroy(vfx, 4f);
 		OnJump.Invoke();
     }
@@ -73,14 +73,14 @@ public class CharacterMovement : MonoBehaviour
 	public void MakeGravity()
 	{
 		 
- 		velocity += gravity * Time.fixedDeltaTime * gravity_multiplier/10 ;
+ 		velocity += gravity * Time.fixedDeltaTime * gravityMultiplier/10 ;
 		if ( groundChecker.isGrounded && velocity.y< 0f)
 		{
 		
 		  velocity.y=0;
 		}
 		
-		character_controller.Move(velocity);
+		characterController.Move(velocity);
 		
 		
 	}
@@ -88,27 +88,14 @@ public class CharacterMovement : MonoBehaviour
 	public void RotateCharacterByCamera(Vector2 input)
 	{
 		if(this.enabled == false) return;
-		if(input.magnitude>0.2)
+		if(input.magnitude!=0)
 		{
-			// Отримати напрямок камери
-			Vector3 cameraForward = Camera.main.transform.forward;
-			Vector3 cameraRight = Camera.main.transform.right;
-
-			// Забезпечити, що рух відбувається плоско відносно землі
-			cameraForward.y = 0f;
-			cameraRight.y = 0f;
-			cameraForward.Normalize();
-			cameraRight.Normalize();
+			Vector3 targetDirection = new Vector3(input.x, 0, input.y);
+			targetDirection = directionPointerTransform.TransformDirection(targetDirection);
+			targetDirection.y = 0; // Ensure the direction is only on the XZ plane
+			Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+			characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 			
-			// Визначити напрямок обертання
-			Vector3 rotateDirection = input.x * cameraRight + input.y * cameraForward;
-
-			// Обертати персонажа
-			if (rotateDirection != Vector3.zero)
-			{
-				Quaternion toRotation = Quaternion.LookRotation(rotateDirection, Vector3.up);
-				character_origin.rotation = Quaternion.RotateTowards(character_origin.rotation, toRotation, rotationSpeed * Time.deltaTime);
-			}
 		}
 
 		

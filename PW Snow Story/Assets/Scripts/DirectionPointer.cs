@@ -4,34 +4,21 @@ using UnityEngine;
 
 public class DirectionPointer : MonoBehaviour
 {
-	public Transform point;
-    public GameObject camera;
+
+    GameObject cameraObject;
     // Start is called before the first frame update
     void Start()
     {
-        
+         cameraObject = Camera.main.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!point)
-        {
-            var cameraObject = Camera.main;
-            if(!cameraObject)
-            {
-                print("Main camera not founded, return");
-                return;
-            } 
-            var angles = Camera.main.transform.eulerAngles;
-	        angles.x=0;
-	        angles.z=0;
-	        transform.eulerAngles = angles;
-        }
-        else
-        {
-            transform.LookAt( point.position);
-        }
+        var cameraAngles = cameraObject.transform.eulerAngles;
+        cameraAngles.x = 0;
+        cameraAngles.z = 0;
+        transform.eulerAngles = cameraAngles;
 	    
     }
 }
