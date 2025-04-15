@@ -39,7 +39,10 @@ public class AnimationSystem : MonoBehaviour
 	{
 		animLink.SetTrigger("jump");
 	}
-	
+	public void AnimateSwordOnSpine()
+	{
+		animLink.SetTrigger("SetSwordOnSpine");
+	}
     // Update is called once per frame
     void Update()
     {
@@ -51,16 +54,16 @@ public class AnimationSystem : MonoBehaviour
 
 
 		sprint = Input.GetButton("Sprint");
-		if(movementMagnitude<0.1f && movementSystem.groundChecker.isGrounded)
+		if(movementMagnitude<0.1f && movementSystem.isGrounded)
 		{
 			if(Input.GetKeyDown(getSwordKey))weaponIsOn = !weaponIsOn;
 		}
 		animLink.SetBool("wasComboInFloat",movementSystem.wasComboInFloat);
-		animLink.applyRootMotion = movementSystem.groundChecker.isGrounded;
+		animLink.applyRootMotion = movementSystem.isGrounded;
 	    animLink.SetFloat("movement_magnitude",movementMagnitude);
 	    
-		animLink.SetBool("grounded",movementSystem.groundChecker.isGrounded);
-		animLink.SetBool("swordIsOn",weaponIsOn);
+		animLink.SetBool("grounded",movementSystem.isGrounded);
+		
 		
 		if(Input.GetKeyDown(defaultAttackKey))attackKeyStickTime=attackKeyStickTimeDelay;
 		if(Input.GetKeyDown(juggleryAttackKey))juggleryAttackKeyAttackKeyStickTime=juggleryAttackKeyStickTimeDelay;

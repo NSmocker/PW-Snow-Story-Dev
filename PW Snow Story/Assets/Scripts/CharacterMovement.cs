@@ -14,7 +14,6 @@ public class CharacterMovement : MonoBehaviour
 	public AudioSource audioSource;
 	public UnityEvent OnJump;
 	public CharacterController characterController;
-	public GroundChecker groundChecker;
 	public float moveSpeed;
 	public float jumpForce=25f;
 	public float rotationSpeed = 180f;
@@ -30,6 +29,10 @@ public class CharacterMovement : MonoBehaviour
 	public bool isFloating;
 	public bool wasComboInFloat;
 
+	[Header("Ground Checker")]
+  	public float radius_offset = 0.1f;
+    public LayerMask groundLayer;
+    public bool isGrounded ;
 	
 
 	public void MoveByCamera(Vector2 input)
@@ -37,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
 		
 
 		
-		if(input.magnitude>0.5 && !groundChecker.isGrounded)
+		if(input.magnitude>0.5 && !isGrounded)
 		{ characterController.Move(transform.forward*input.magnitude*moveSpeed*Time.fixedDeltaTime);
 			/*
 			var main_direction = new Vector3(input.x,0,input.y)*move_speed;
@@ -49,7 +52,7 @@ public class CharacterMovement : MonoBehaviour
 	public void MakeJump()
 	{
 	
-    if (groundChecker.isGrounded)
+    if (isGrounded)
     {	wasComboInFloat=false;
         isSecondJumpMaked = false;
         velocity.y = jumpForce*Time.fixedDeltaTime;
@@ -58,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    else if (!isSecondJumpMaked && !groundChecker.isGrounded)
+    else if (!isSecondJumpMaked && !isGrounded)
     {
         // Start the second jump
         isSecondJumpMaked = true;
@@ -74,7 +77,7 @@ public class CharacterMovement : MonoBehaviour
 	{
 		 
  		velocity += gravity * Time.fixedDeltaTime * gravityMultiplier/10 ;
-		if ( groundChecker.isGrounded && velocity.y< 0f)
+		if ( isGrounded && velocity.y< 0f)
 		{
 		
 		  velocity.y=0;
@@ -108,7 +111,8 @@ public class CharacterMovement : MonoBehaviour
     }
 
 	void FixedUpdate()
-	{
+	{	
+		isGrounded = Physics.CheckSphere(transform.position, characterController.radius+radius_offset, groundLayer);
 		MakeGravity();
 		if(isFloating)velocity.y = 0;
 	}
@@ -118,4 +122,13 @@ public class CharacterMovement : MonoBehaviour
 		
 		if (Input.GetButtonDown("Jump")) MakeJump(); 	
     }
+	void OnDrawGizmos()
+	{
+        if (characterController != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, characterController.radius + radius_offset);
+        }
+    }
+
 }
