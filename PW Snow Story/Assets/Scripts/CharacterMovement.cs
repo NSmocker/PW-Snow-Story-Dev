@@ -90,20 +90,18 @@ public class CharacterMovement : MonoBehaviour
 	
 	public void RotateCharacterByCamera(Vector2 input)
 	{
-		if(this.enabled == false) return;
-		if(input.magnitude!=0)
-		{
-			Vector3 targetDirection = new Vector3(input.x, 0, input.y);
-			targetDirection = directionPointerTransform.TransformDirection(targetDirection);
-			targetDirection.y = 0; // Ensure the direction is only on the XZ plane
-			Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-			characterController.transform.rotation = Quaternion.RotateTowards(characterController.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-			
-		}
+    if (this.enabled == false) return;
 
-		
-	
-	}
+    if (input.normalized.magnitude >= 0.05f)
+    {
+        Vector3 targetDirection = directionPointerTransform.TransformDirection(new Vector3(input.x, 0, input.y));
+        targetDirection.y = 0; // Ігноруємо вертикальну складову
+        targetDirection.Normalize(); // Нормалізуємо вектор
+
+        Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+        characterController.transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+}
     // Start is called before the first frame update
     void Start()
     {

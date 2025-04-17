@@ -6,19 +6,34 @@ public class DirectionPointer : MonoBehaviour
 {
 
     GameObject cameraObject;
+    public bool isTargetLocked;
+    public GameObject target;
+
     // Start is called before the first frame update
     void Start()
     {
-         cameraObject = Camera.main.gameObject;
+        cameraObject = Camera.main.gameObject;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        var cameraAngles = cameraObject.transform.eulerAngles;
-        cameraAngles.x = 0;
-        cameraAngles.z = 0;
-        transform.eulerAngles = cameraAngles;
+        if(!isTargetLocked)
+        {
+            var cameraAngles = cameraObject.transform.eulerAngles;
+            cameraAngles.x = 0;
+            cameraAngles.z = 0;
+            transform.eulerAngles = cameraAngles;
+        }
+        else
+        {
+            transform.LookAt(target.transform.position); 
+            var pointerAngles = transform.eulerAngles;
+            pointerAngles.x = 0;
+            pointerAngles.z = 0;
+            transform.eulerAngles = pointerAngles;   
+        }
+      
 	    
     }
 }
