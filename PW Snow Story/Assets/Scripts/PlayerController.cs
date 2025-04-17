@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 		movementSystem.MoveByCamera(moveVector);
 		movementSystem.RotateCharacterByCamera(moveVector);
 	}
-	void HandleAnimationFixedUpdate()
+	void HandleAnimation_Update()
 	{
 		animationSystem.AnimateByInput(moveVector);
 	}
@@ -73,13 +73,13 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		HandleAnimationFixedUpdate();
+		
 		HandleMovement();
 	}
     void Update()
     {
 	    
-
+		HandleAnimation_Update();
 		UserInputUpdate();
 	    
 	    

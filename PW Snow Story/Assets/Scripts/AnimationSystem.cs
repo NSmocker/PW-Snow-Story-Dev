@@ -9,7 +9,8 @@ public class AnimationSystem : MonoBehaviour
 	//public SwordSystem swordSystem;
 	public Animator animLink;
 	public float movementMagnitude;
-	public bool sprint;
+	public Vector2 moveVector;
+
 	public bool weaponIsOn; 
     public KeyCode defaultAttackKey = KeyCode.Mouse0;
 	 public KeyCode juggleryAttackKey = KeyCode.Mouse0;
@@ -27,7 +28,7 @@ public class AnimationSystem : MonoBehaviour
 	public void AnimateByInput(Vector2 moveInfo)
 	{
 		movementMagnitude = moveInfo.magnitude;
-		
+		moveVector= moveInfo;
 
 	}
     // Start is called before the first frame update
@@ -53,15 +54,16 @@ public class AnimationSystem : MonoBehaviour
 		if(juggleryAttackKeyAttackKeyStickTime>0)juggleryAttackKeyAttackKeyStickTime-=Time.deltaTime;
 
 
-		sprint = Input.GetButton("Sprint");
+		
 		if(movementMagnitude<0.1f && movementSystem.isGrounded)
 		{
 			if(Input.GetKeyDown(getSwordKey))weaponIsOn = !weaponIsOn;
 		}
 		animLink.SetBool("wasComboInFloat",movementSystem.wasComboInFloat);
 		animLink.applyRootMotion = movementSystem.isGrounded;
-	    animLink.SetFloat("movement_magnitude",movementMagnitude);
-	    
+	    animLink.SetFloat("movementMagnitude",movementMagnitude);
+	    animLink.SetFloat("movementHorizontal",moveVector.x);
+	    animLink.SetFloat("movementVertical",moveVector.y);
 		animLink.SetBool("grounded",movementSystem.isGrounded);
 		
 		
