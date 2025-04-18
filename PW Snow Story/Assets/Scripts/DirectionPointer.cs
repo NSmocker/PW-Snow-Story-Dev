@@ -5,14 +5,14 @@ using UnityEngine;
 public class DirectionPointer : MonoBehaviour
 {
 
-    GameObject cameraObject;
+    public GameObject cameraObject;
     public bool isTargetLocked;
     public GameObject target;
 
     // Start is called before the first frame update
     void Start()
     {
-        cameraObject = Camera.main.gameObject;
+         
     }
 
     // Update is called once per frame
