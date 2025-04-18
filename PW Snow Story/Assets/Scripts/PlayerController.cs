@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,10 @@ public class PlayerController : MonoBehaviour
 	public AnimationSystem animationSystem;
 	public InventorySystem inventorySystem;
 	public SwordSystem swordSystem;
+
+	public GameObject freeLookCameraMode;
+	public GameObject targetCameraMode;
+	
 	
 	public Vector2 moveVector;
 	public Vector2 cameraVector;
@@ -19,29 +24,69 @@ public class PlayerController : MonoBehaviour
     {
         
     }
-	void HandleMovement()
+	void HandleMovement_FixedUpdate()
 	{
 		movementSystem.MoveByCamera(moveVector);
-		movementSystem.RotateCharacterByCamera(moveVector);
+		if(animationSystem.isBlocking)
+		{
+			if(movementSystem.directionPointer.target!=null)movementSystem.RotateCharacterToDirectionPointer();
+			
+		}
+		else
+		{
+			movementSystem.RotateCharacterByCamera(moveVector);
+		}
 	}
 	void HandleAnimation_Update()
 	{
 		animationSystem.AnimateByInput(moveVector);
 	}
-
+	public void CheckLockTarget_Update()
+	{
+		if(animationSystem.isBlocking)
+		{
+			GetSwordInArmBackGrip();
+			if(movementSystem.directionPointer.target!=null)
+			{
+				movementSystem.directionPointer.isTargetLocked=true;
+				freeLookCameraMode.SetActive(false);
+				targetCameraMode.SetActive(true);
+				freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=false;
+			}
+			else
+			{
+				movementSystem.directionPointer.isTargetLocked=true;
+				freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=false;
+				
+			}
+			
+		}
+		else
+		{
+			freeLookCameraMode.SetActive(true);
+			targetCameraMode.SetActive(false);
+			movementSystem.directionPointer.isTargetLocked=false;
+			freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=true;
+		}
+	}
 	public void GetSwordInArm()
 	{
 		swordSystem.SetOnArm();
 		
 	}
+	public void GetSwordInArmBackGrip()
+	{
+		swordSystem.SetOnArmBackGrip();
+		
+	}
 	public void GetSwordInBack()
 	{
-		swordSystem.SetOnSpine();
+		if(!animationSystem.isBlocking) swordSystem.SetOnSpine();
 		
 	}
 	public void RequestToSpineSwordFromAnimation()
 	{
-		animationSystem.AnimateSwordOnSpine();
+		if(!animationSystem.isBlocking) animationSystem.AnimateSwordOnSpine();
 	}
 	public void AirComboFloatStart()
 	{
@@ -64,7 +109,7 @@ public class PlayerController : MonoBehaviour
 	}
 
 
-	void UserInputUpdate()
+	void UserInput_Update()
 	{
 		moveVector.x = Input.GetAxis("Horizontal");
 	    moveVector.y = Input.GetAxis("Vertical");
@@ -74,13 +119,14 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 		
-		HandleMovement();
+		HandleMovement_FixedUpdate();
 	}
     void Update()
     {
 	    
 		HandleAnimation_Update();
-		UserInputUpdate();
+		CheckLockTarget_Update();
+		UserInput_Update();
 	    
 	    
 	    

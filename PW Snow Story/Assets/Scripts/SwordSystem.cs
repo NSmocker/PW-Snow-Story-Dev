@@ -4,7 +4,7 @@ public class SwordSystem : MonoBehaviour
 {
 
     public bool isOn;
-    public Transform spine, arm;
+    public Transform spine, arm, armBackGrip;
     public Animator swordAnimator;
  
 
@@ -31,6 +31,12 @@ public class SwordSystem : MonoBehaviour
     public void SetOnArm()
     {
         transform.parent = arm;
+        transform.localPosition = Vector3.zero;
+        transform.localEulerAngles = Vector3.zero;
+    }
+    public void SetOnArmBackGrip()
+    {
+        transform.parent = armBackGrip;
         transform.localPosition = Vector3.zero;
         transform.localEulerAngles = Vector3.zero;
     }

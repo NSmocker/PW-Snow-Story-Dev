@@ -18,6 +18,9 @@ public class DirectionPointer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+
+       
         if(!isTargetLocked)
         {
             var cameraAngles = cameraObject.transform.eulerAngles;
@@ -26,7 +29,7 @@ public class DirectionPointer : MonoBehaviour
             transform.eulerAngles = cameraAngles;
         }
         else
-        {
+        { if (target == null) return;
             transform.LookAt(target.transform.position); 
             var pointerAngles = transform.eulerAngles;
             pointerAngles.x = 0;

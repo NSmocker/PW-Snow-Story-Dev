@@ -12,8 +12,11 @@ public class AnimationSystem : MonoBehaviour
 	public Vector2 moveVector;
 
 	public bool weaponIsOn; 
+	public bool isBlocking;
     public KeyCode defaultAttackKey = KeyCode.Mouse0;
-	 public KeyCode juggleryAttackKey = KeyCode.Mouse0;
+	public KeyCode juggleryAttackKey = KeyCode.Mouse0;
+	public KeyCode blockKey = KeyCode.Mouse1;
+	 
 	public KeyCode getSwordKey = KeyCode.V;
 	
 	[Header("Attacks")]
@@ -52,13 +55,24 @@ public class AnimationSystem : MonoBehaviour
 		
 		if(attackKeyStickTime>0)attackKeyStickTime-=Time.deltaTime;
 		if(juggleryAttackKeyAttackKeyStickTime>0)juggleryAttackKeyAttackKeyStickTime-=Time.deltaTime;
+		
+		if(Input.GetKeyDown(blockKey))
+		{
+			animLink.SetLayerWeight(2,1);	
+			animLink.SetBool("Block/Lock",true);
+			isBlocking=true;
+		}
+		if(Input.GetKeyUp(blockKey))
+		{
+			animLink.SetLayerWeight(2,0);
+			animLink.SetBool("Block/Lock",false);
+			isBlocking=false;
+
+		}
 
 
 		
-		if(movementMagnitude<0.1f && movementSystem.isGrounded)
-		{
-			if(Input.GetKeyDown(getSwordKey))weaponIsOn = !weaponIsOn;
-		}
+		
 		animLink.SetBool("wasComboInFloat",movementSystem.wasComboInFloat);
 		animLink.applyRootMotion = movementSystem.isGrounded;
 	    animLink.SetFloat("movementMagnitude",movementMagnitude);

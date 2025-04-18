@@ -489,28 +489,33 @@ ModelImporter:
         length: 0
         modified: 1
     skeleton:
-    - name: Ichigo Main Avatar(Clone)
+    - name: Ichigo Main Model(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Boots
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0.00000012234733, y: 0.11844394, z: 0.01125395}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: Hands
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: Head
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
+    - name: Head Aim
+      parentName: Ichigo Main Model(Clone)
+      position: {x: -0.000008049853, y: 1.0331866, z: 0.6613315}
+      rotation: {x: -1.2397258e-16, y: -0.6991226, z: 0.71500176, w: -3.5579903e-17}
+      scale: {x: 0.16595809, y: 0.1659581, z: 0.1659581}
     - name: metarig
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
@@ -782,7 +787,7 @@ ModelImporter:
     - name: L.Finger Pointer.002
       parentName: L.Finger Pointer.001
       position: {x: 2.6309863e-10, y: 0.00026502134, z: -3.7252902e-11}
-      rotation: {x: 0.022479014, y: -0.002627039, z: 0.0065913117, w: 0.9997221}
+      rotation: {x: 0.022479016, y: -0.002627039, z: 0.006591312, w: 0.9997221}
       scale: {x: 1.0000008, y: 1.0000007, z: 0.9999987}
     - name: L.FingerMiddle
       parentName: hand.L
@@ -797,7 +802,7 @@ ModelImporter:
     - name: L.FingerMiddle.002
       parentName: L.FingerMiddle.001
       position: {x: -8.6234647e-10, y: 0.00030836393, z: -2.3283064e-12}
-      rotation: {x: -0.009419947, y: 0.00052083185, z: -0.018874902, w: 0.9997773}
+      rotation: {x: -0.009419948, y: 0.00052083185, z: -0.018874904, w: 0.9997773}
       scale: {x: 1.000002, y: 0.9999991, z: 0.99999994}
     - name: L.FingerPinky
       parentName: hand.L
@@ -937,7 +942,7 @@ ModelImporter:
     - name: spine.005
       parentName: spine.004
       position: {x: -2.4447217e-11, y: 0.0007880084, z: 3.5484846e-10}
-      rotation: {x: 0.11359051, y: 0.094517455, z: -0.029438851, w: 0.9885833}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 0.99999803, z: 1.0000024}
     - name: C Hair Start
       parentName: spine.005
@@ -1140,12 +1145,12 @@ ModelImporter:
       rotation: {x: -0.00000027474016, y: 0.96124935, z: -0.27568063, w: 0.0000005364418}
       scale: {x: 1.0000018, y: 1.0000427, z: 0.99995565}
     - name: Pants
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: RootControll
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
@@ -1200,7 +1205,7 @@ ModelImporter:
       rotation: {x: 0.006542889, y: 1.452813e-18, z: 2.5608513e-25, w: 0.9999786}
       scale: {x: 1, y: 1, z: 1}
     - name: TopSuite
-      parentName: Ichigo Main Avatar(Clone)
+      parentName: Ichigo Main Model(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
