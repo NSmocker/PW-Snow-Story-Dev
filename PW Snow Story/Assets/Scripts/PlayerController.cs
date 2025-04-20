@@ -41,6 +41,26 @@ public class PlayerController : MonoBehaviour
 	{
 		animationSystem.AnimateByInput(moveVector);
 	}
+
+	void AlignFreeLookToCurrentView()
+	{
+		var brain = Camera.main.GetComponent<CinemachineBrain>();
+		if (brain == null) return;
+
+		var freeLook = freeLookCameraMode.GetComponent<CinemachineFreeLook>();
+		if (freeLook == null) return;
+
+		Transform brainTransform = brain.OutputCamera.transform;
+
+		// Копіюємо позицію та напрямок
+		freeLook.transform.position = brainTransform.position;
+		freeLook.transform.rotation = brainTransform.rotation;
+
+		// Прив'язуємо осі (можна покращити з більш точним обрахунком кута)
+		Vector3 forward = brainTransform.forward;
+		float pitch = Vector3.SignedAngle(Vector3.ProjectOnPlane(forward, Vector3.right), Vector3.up, Vector3.right);
+		freeLook.m_YAxis.Value = Mathf.InverseLerp(-30f, 70f, pitch); // поправ залежно від твоїх налаштувань
+	}
 	public void CheckLockTarget_Update()
 	{
 		if(animationSystem.isBlocking)
@@ -63,10 +83,13 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
+			AlignFreeLookToCurrentView();
 			freeLookCameraMode.SetActive(true);
 			targetCameraMode.SetActive(false);
 			movementSystem.directionPointer.isTargetLocked=false;
+			movementSystem.directionPointer.target = null;
 			freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=true;
+			
 		}
 	}
 	public void GetSwordInArm()

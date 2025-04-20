@@ -22,8 +22,8 @@ public class TargetLocker : MonoBehaviour
             // Якщо DirectionPointer блокує ціль, встановити найближчого монстра як target
             if (directionPointer != null && directionPointer.isTargetLocked)
             {
-                directionPointer.target = nearestMonster;
-                print("+++");
+                if(directionPointer.target==null) directionPointer.target = nearestMonster;
+                
             }
         }
     }

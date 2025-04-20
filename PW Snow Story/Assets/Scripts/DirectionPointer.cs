@@ -29,7 +29,8 @@ public class DirectionPointer : MonoBehaviour
             transform.eulerAngles = cameraAngles;
         }
         else
-        { if (target == null) return;
+        { 
+            if (target == null) return;
             transform.LookAt(target.transform.position); 
             var pointerAngles = transform.eulerAngles;
             pointerAngles.x = 0;
