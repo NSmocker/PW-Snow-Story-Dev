@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 650
     y: -190
     width: 728
-    height: 2357
+    height: 2353
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,7 +51,7 @@ MonoBehaviour:
   - name: Camera
     path: 
     tooltip: 
-    space: 0
+    space: 1
     spaceable: 1
     sheetType: 
     realType: Position
@@ -806,7 +806,9 @@ MonoBehaviour:
     - outputSlot: {fileID: 8926484042661614643}
       inputSlot: {fileID: 8926484042661614700}
     position: {x: 713, y: 447}
-    expandedSlots: []
+    expandedSlots:
+    - {fileID: 8926484042661614643}
+    - {fileID: 8926484042661614644}
     expanded: 0
     supecollapsed: 0
 --- !u!114 &8926484042661614643
@@ -836,7 +838,7 @@ MonoBehaviour:
         m_SerializableType: UnityEditor.VFX.Position, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       m_SerializableObject: '{"position":{"x":0.0,"y":0.0,"z":0.0}}'
-    m_Space: 0
+    m_Space: 1
   m_Property:
     name: o
     m_serializedType:
@@ -3222,7 +3224,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614741}
   - {fileID: 8926484042661614742}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614738}
   m_MasterData:

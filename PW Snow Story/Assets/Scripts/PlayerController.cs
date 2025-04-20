@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,9 +10,9 @@ public class PlayerController : MonoBehaviour
 	public AnimationSystem animationSystem;
 	public InventorySystem inventorySystem;
 	public SwordSystem swordSystem;
+	public DirectionPointer directionPointer;
 
-	public GameObject freeLookCameraMode;
-	public GameObject targetCameraMode;
+	public CameraModeSwitcher cameraModeSwitcher;
 	
 	
 	public Vector2 moveVector;
@@ -22,19 +23,19 @@ public class PlayerController : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 	void HandleMovement_FixedUpdate()
 	{
 		movementSystem.MoveByCamera(moveVector);
 		if(animationSystem.isBlocking)
 		{
-			if(movementSystem.directionPointer.target!=null)movementSystem.RotateCharacterToDirectionPointer();
+			if(directionPointer.target!=null)movementSystem.RotateCharacterToDirectionPointer(directionPointer.transform);
 			
 		}
 		else
 		{
-			movementSystem.RotateCharacterByCamera(moveVector);
+			movementSystem.RotateCharacterByCamera(moveVector,directionPointer.transform);
 		}
 	}
 	void HandleAnimation_Update()
@@ -42,53 +43,33 @@ public class PlayerController : MonoBehaviour
 		animationSystem.AnimateByInput(moveVector);
 	}
 
-	void AlignFreeLookToCurrentView()
-	{
-		var brain = Camera.main.GetComponent<CinemachineBrain>();
-		if (brain == null) return;
-
-		var freeLook = freeLookCameraMode.GetComponent<CinemachineFreeLook>();
-		if (freeLook == null) return;
-
-		Transform brainTransform = brain.OutputCamera.transform;
-
-		// Копіюємо позицію та напрямок
-		freeLook.transform.position = brainTransform.position;
-		freeLook.transform.rotation = brainTransform.rotation;
-
-		// Прив'язуємо осі (можна покращити з більш точним обрахунком кута)
-		Vector3 forward = brainTransform.forward;
-		float pitch = Vector3.SignedAngle(Vector3.ProjectOnPlane(forward, Vector3.right), Vector3.up, Vector3.right);
-		freeLook.m_YAxis.Value = Mathf.InverseLerp(-30f, 70f, pitch); // поправ залежно від твоїх налаштувань
-	}
+	
 	public void CheckLockTarget_Update()
 	{
 		if(animationSystem.isBlocking)
 		{
 			GetSwordInArmBackGrip();
-			if(movementSystem.directionPointer.target!=null)
+			if(directionPointer.target!=null)
 			{
-				movementSystem.directionPointer.isTargetLocked=true;
-				freeLookCameraMode.SetActive(false);
-				targetCameraMode.SetActive(true);
-				freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=false;
+				directionPointer.isTargetLocked=true;
+				cameraModeSwitcher.ToTargetGroupCamera();
+				
+				
 			}
 			else
 			{
-				movementSystem.directionPointer.isTargetLocked=true;
-				freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=false;
+				directionPointer.isTargetLocked=true;
+				
 				
 			}
 			
 		}
 		else
 		{
-			AlignFreeLookToCurrentView();
-			freeLookCameraMode.SetActive(true);
-			targetCameraMode.SetActive(false);
-			movementSystem.directionPointer.isTargetLocked=false;
-			movementSystem.directionPointer.target = null;
-			freeLookCameraMode.GetComponent<CinemachineInputAxisController>().enabled=true;
+			cameraModeSwitcher.ToOrbitalCamera();
+			directionPointer.isTargetLocked=false;
+			directionPointer.target = null;
+			
 			
 		}
 	}

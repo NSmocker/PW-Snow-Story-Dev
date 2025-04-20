@@ -18,7 +18,7 @@ public class CharacterMovement : MonoBehaviour
 	public float jumpForce=25f;
 	public float rotationSpeed = 180f;
 
-	public DirectionPointer directionPointer;
+	
 	public Vector3 velocity;
 	public float sprintMultipliyer;
 	bool isSecondJumpMaked;
@@ -88,13 +88,13 @@ public class CharacterMovement : MonoBehaviour
 		
 	}
 	
-	public void RotateCharacterByCamera(Vector2 input)
+	public void RotateCharacterByCamera(Vector2 input,Transform directionPointer)
 	{
 		if (this.enabled == false) return;
 
 		if (input.normalized.magnitude >= 0.05f)
 		{
-			Vector3 targetDirection = directionPointer.transform.TransformDirection(new Vector3(input.x, 0, input.y));
+			Vector3 targetDirection = directionPointer.TransformDirection(new Vector3(input.x, 0, input.y));
 			targetDirection.y = 0; // Ігноруємо вертикальну складову
 			targetDirection.Normalize(); // Нормалізуємо вектор
 
@@ -102,9 +102,9 @@ public class CharacterMovement : MonoBehaviour
 			characterController.transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 		}
 	}
-	public void RotateCharacterToDirectionPointer()
+	public void RotateCharacterToDirectionPointer(Transform directionPointer)
 	{
-		characterController.transform.rotation = directionPointer.transform.rotation;
+		characterController.transform.rotation = directionPointer.rotation;
 	}
 
     // Start is called before the first frame update
