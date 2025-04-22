@@ -5713,14 +5713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40569f77cb82e0439033779d90eb063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSystem: {fileID: 1793243054}
-  animationSystem: {fileID: 1908835259}
-  inventorySystem: {fileID: 670231444}
-  swordSystem: {fileID: 1398590352}
-  directionPointer: {fileID: 1009168591}
-  cameraModeSwitcher: {fileID: 8646798622151954056}
-  moveVector: {x: 0, y: 0}
-  cameraVector: {x: 0, y: 0}
+  characterToControll: {fileID: 0}
 --- !u!4 &335026572
 Transform:
   m_ObjectHideFlags: 0
@@ -5734,7 +5727,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1009168590}
   - {fileID: 1216648228}
   - {fileID: 1996427501}
   - {fileID: 1146879212}
@@ -15583,12 +15575,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009168589}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35814476, y: 3.46973, z: -3.5777512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 335026572}
+  m_Father: {fileID: 1880599025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1009168591
 MonoBehaviour:
@@ -23075,7 +23067,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3504054403798301593, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: field of view
-      value: 60
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3504054403798301593, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_BackGroundColor.a
@@ -23095,31 +23087,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35814476
+      value: 0.35814667
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7768183
+      value: -1.399523
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5377502
+      value: 1.5039444
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.960519
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2782144
+      value: -0.000000078952446
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000028625703
+      value: -0.00000015178516
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000008291436
+      value: -1.19838094e-14
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -28951,17 +28943,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2ee8881034f2f8344a6c8fce758b5513, type: 3}
   m_PrefabInstance: {fileID: 1789897718}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1793243054 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
-  m_PrefabInstance: {fileID: 8646798622151954034}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc593f7c3d024f4bbfe23681f1622c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1807536858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31297,17 +31278,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4435815980811710, guid: 850befecccd553b4e97c64bae868e01a, type: 3}
   m_PrefabInstance: {fileID: 1908425607}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1908835259 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1769152547205815375, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
-  m_PrefabInstance: {fileID: 8646798622151954034}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61470f485875af14da9d144b4e93e479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1909351710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4435815980811710, guid: 850befecccd553b4e97c64bae868e01a, type: 3}
@@ -35314,7 +35284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4255276956776011280, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: m_Name
-      value: '[Character]Yona Genie '
+      value: '[Character Familiar]Yona Genie '
       objectReference: {fileID: 0}
     - target: {fileID: 4770138054338165963, guid: 97e6082852cc57546b2d59bcc20c2adc, type: 3}
       propertyPath: m_Drag
@@ -35657,6 +35627,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.007380306
       objectReference: {fileID: 0}
+    - target: {fileID: 3593166389090343804, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: m_Name
+      value: '[Weapon] 95 Morai Sword'
+      objectReference: {fileID: 0}
     - target: {fileID: 3931773964062643273, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -35899,7 +35873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7768213201669530496, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: m_Name
-      value: '[Character]Ichigo Main Avatar'
+      value: '[Character]Ichigo'
       objectReference: {fileID: 0}
     - target: {fileID: 7926723936697257198, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: m_LocalRotation.w
@@ -35985,6 +35959,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3758405470170762396, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1900582441}
+    - targetCorrespondingSourceObject: {fileID: 3758405470170762396, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1009168590}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7768213201669530496, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       insertIndex: -1
@@ -35992,6 +35969,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7768213201669530496, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8646798622151954056}
+    - targetCorrespondingSourceObject: {fileID: 7768213201669530496, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8646798622151954059}
     - targetCorrespondingSourceObject: {fileID: 9147238603810001689, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 111152775}
@@ -36038,6 +36018,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbitalCamera: {fileID: 1994458822}
   targetGroupCamera: {fileID: 127441572}
+--- !u!114 &8646798622151954059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214507072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c895f0ae336634eb84c77a78d93c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSystem: {fileID: 0}
+  animationSystem: {fileID: 0}
+  inventorySystem: {fileID: 0}
+  weapon: {fileID: 0}
+  directionPointer: {fileID: 1009168591}
+  cameraModeSwitcher: {fileID: 8646798622151954056}
+  moveVector: {x: 0, y: 0}
+  cameraVector: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

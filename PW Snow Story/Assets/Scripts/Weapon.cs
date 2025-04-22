@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SwordSystem : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
 
     public bool isOn;

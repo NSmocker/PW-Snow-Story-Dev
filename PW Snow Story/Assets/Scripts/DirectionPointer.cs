@@ -12,6 +12,10 @@ public class DirectionPointer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //берем назву нашого батька
+        name = transform.parent.name+ " " + name;
+        //Відв'язуємось, щоб не залежити від оберту батьківських об'єктів
+        transform.parent=null; 
          
     }
 

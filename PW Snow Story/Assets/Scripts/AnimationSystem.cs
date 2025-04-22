@@ -1,23 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationSystem : MonoBehaviour
 {
-	public CharacterMovement movementSystem;
 
-	//public SwordSystem swordSystem;
-	public Animator animLink;
+
+	public Character masterCharacter;
+
+
+	[Header("System Vars")]
+	public Animator animator;
 	public float movementMagnitude;
 	public Vector2 moveVector;
 
+	[Header("States")]
 	public bool weaponIsOn; 
 	public bool isBlocking;
-    public KeyCode defaultAttackKey = KeyCode.Mouse0;
-	public KeyCode juggleryAttackKey = KeyCode.Mouse0;
-	public KeyCode blockKey = KeyCode.Mouse1;
-	 
-	public KeyCode getSwordKey = KeyCode.V;
+
+    
 	
 	[Header("Attacks")]
 	public float attackKeyStickTime ;
@@ -26,7 +28,13 @@ public class AnimationSystem : MonoBehaviour
 	public float juggleryAttackKeyStickTimeDelay = 0.1f;
 	
 
-	
+	public void SetBlockingState(bool BlockingState)
+	{	
+		if(isBlocking) animator.SetLayerWeight(2,1);	
+		else animator.SetLayerWeight(2,0);
+		animator.SetBool("Block/Lock",BlockingState);
+		isBlocking=BlockingState;
+	}
 
 	public void AnimateByInput(Vector2 moveInfo)
 	{
@@ -37,15 +45,21 @@ public class AnimationSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		movementSystem.OnJump.AddListener(AnimateJump);
+		masterCharacter = transform.parent.GetComponent<Character>();
+		if(!masterCharacter)Debug.LogError("Master character system is not assigned!");
+
+		#region Event Bindings
+		masterCharacter.movementSystem.OnJump.AddListener(AnimateJump);
+		#endregion
+
     }
 	void AnimateJump() 
 	{
-		animLink.SetTrigger("jump");
+		animator.SetTrigger("jump");
 	}
-	public void AnimateSwordOnSpine()
+	public void AnimateWeaponOnSpine()
 	{
-		animLink.SetTrigger("SetSwordOnSpine");
+		animator.SetTrigger("SetSwordOnSpine");
 	}
     // Update is called once per frame
     void Update()
@@ -56,38 +70,25 @@ public class AnimationSystem : MonoBehaviour
 		if(attackKeyStickTime>0)attackKeyStickTime-=Time.deltaTime;
 		if(juggleryAttackKeyAttackKeyStickTime>0)juggleryAttackKeyAttackKeyStickTime-=Time.deltaTime;
 		
-		if(Input.GetKeyDown(blockKey))
-		{
-			animLink.SetLayerWeight(2,1);	
-			animLink.SetBool("Block/Lock",true);
-			isBlocking=true;
-		}
-		if(Input.GetKeyUp(blockKey))
-		{
-			animLink.SetLayerWeight(2,0);
-			animLink.SetBool("Block/Lock",false);
-			isBlocking=false;
-
-		}
-
+		
 
 		
 		
-		animLink.SetBool("wasComboInFloat",movementSystem.wasComboInFloat);
-		animLink.applyRootMotion = movementSystem.isGrounded;
-	    animLink.SetFloat("movementMagnitude",movementMagnitude);
-	    animLink.SetFloat("movementHorizontal",moveVector.x);
-	    animLink.SetFloat("movementVertical",moveVector.y);
-		animLink.SetBool("grounded",movementSystem.isGrounded);
+		animator.SetBool("wasComboInFloat",movementSystem.wasComboInFloat);
+		animator.applyRootMotion = movementSystem.isGrounded;
+	    animator.SetFloat("movementMagnitude",movementMagnitude);
+	    animator.SetFloat("movementHorizontal",moveVector.x);
+	    animator.SetFloat("movementVertical",moveVector.y);
+		animator.SetBool("grounded",movementSystem.isGrounded);
 		
 		
 		if(Input.GetKeyDown(defaultAttackKey))attackKeyStickTime=attackKeyStickTimeDelay;
 		if(Input.GetKeyDown(juggleryAttackKey))juggleryAttackKeyAttackKeyStickTime=juggleryAttackKeyStickTimeDelay;
 		 
 
-		animLink.SetBool("makeAttackJugglery",juggleryAttackKeyAttackKeyStickTime>0);
+		animator.SetBool("makeAttackJugglery",juggleryAttackKeyAttackKeyStickTime>0);
 
-		animLink.SetBool("makeAttackDefault",attackKeyStickTime>0);
+		animator.SetBool("makeAttackDefault",attackKeyStickTime>0);
 		 
 	    
     }
