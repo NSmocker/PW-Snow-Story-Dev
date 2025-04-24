@@ -5714,6 +5714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterToControll: {fileID: 0}
+  moveVector: {x: 0, y: 0}
 --- !u!4 &335026572
 Transform:
   m_ObjectHideFlags: 0
@@ -28943,6 +28944,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2ee8881034f2f8344a6c8fce758b5513, type: 3}
   m_PrefabInstance: {fileID: 1789897718}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1793243054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 218508246344258884, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+  m_PrefabInstance: {fileID: 8646798622151954034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc593f7c3d024f4bbfe23681f1622c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1807536858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31278,6 +31290,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4435815980811710, guid: 850befecccd553b4e97c64bae868e01a, type: 3}
   m_PrefabInstance: {fileID: 1908425607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1908835259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1769152547205815375, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+  m_PrefabInstance: {fileID: 8646798622151954034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61470f485875af14da9d144b4e93e479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1909351710 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4435815980811710, guid: 850befecccd553b4e97c64bae868e01a, type: 3}
@@ -36030,14 +36053,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c895f0ae336634eb84c77a78d93c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSystem: {fileID: 0}
-  animationSystem: {fileID: 0}
-  inventorySystem: {fileID: 0}
-  weapon: {fileID: 0}
+  movementSystem: {fileID: 1793243054}
+  animationSystem: {fileID: 1908835259}
+  inventorySystem: {fileID: 670231444}
+  weapon: {fileID: 1398590352}
   directionPointer: {fileID: 1009168591}
   cameraModeSwitcher: {fileID: 8646798622151954056}
-  moveVector: {x: 0, y: 0}
-  cameraVector: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
