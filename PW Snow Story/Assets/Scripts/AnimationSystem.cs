@@ -28,15 +28,20 @@ public class AnimationSystem : MonoBehaviour
 	public float juggleryAttackKeyStickTimeDelay = 0.1f;
 	
 
-	public void SetBlockingState(bool BlockingState)
+	public AnimationCurve blockCurve;
+	public void SetBlockingState(bool BlockingState,float blockAxis)
 	{	
-		if(isBlocking) animator.SetLayerWeight(2,1);	
-		else animator.SetLayerWeight(2,0);
+		 
+			
+			
+		 	
+	  	animator.SetLayerWeight(2,blockAxis);
+
 		animator.SetBool("Block/Lock",BlockingState);
 		isBlocking=BlockingState;
 	}
 
-	public void AnimateByInput(Vector2 moveInfo)
+	public void AnimateByMovement(Vector2 moveInfo)
 	{
 		movementMagnitude = moveInfo.magnitude;
 		moveVector= moveInfo;
@@ -45,7 +50,7 @@ public class AnimationSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		masterCharacter = transform.parent.GetComponent<Character>();
+		masterCharacter = transform.parent.parent.GetComponent<Character>();
 		if(!masterCharacter)Debug.LogError("Master character system is not assigned!");
 
 		#region Event Bindings
@@ -62,10 +67,24 @@ public class AnimationSystem : MonoBehaviour
 		animator.SetTrigger("SetSwordOnSpine");
 	}
     // Update is called once per frame
+   
+	public void MakeAttack_Click()
+	{
+		attackKeyStickTime=attackKeyStickTimeDelay;
+	}
+	public void MakeAttackJugglery_Click()
+	{
+		juggleryAttackKeyAttackKeyStickTime=juggleryAttackKeyStickTimeDelay;
+	}
+
+
     void Update()
     {
 
 		if(Time.timeScale == 0) return;
+		animator.applyRootMotion = masterCharacter.movementSystem.isGrounded;
+		
+		
 		
 		if(attackKeyStickTime>0)attackKeyStickTime-=Time.deltaTime;
 		if(juggleryAttackKeyAttackKeyStickTime>0)juggleryAttackKeyAttackKeyStickTime-=Time.deltaTime;
@@ -74,20 +93,12 @@ public class AnimationSystem : MonoBehaviour
 
 		
 		
-		animator.SetBool("wasComboInFloat",movementSystem.wasComboInFloat);
-		animator.applyRootMotion = movementSystem.isGrounded;
+		animator.SetBool("wasComboInFloat",masterCharacter.movementSystem.wasComboInFloat);
 	    animator.SetFloat("movementMagnitude",movementMagnitude);
 	    animator.SetFloat("movementHorizontal",moveVector.x);
 	    animator.SetFloat("movementVertical",moveVector.y);
-		animator.SetBool("grounded",movementSystem.isGrounded);
-		
-		
-		if(Input.GetKeyDown(defaultAttackKey))attackKeyStickTime=attackKeyStickTimeDelay;
-		if(Input.GetKeyDown(juggleryAttackKey))juggleryAttackKeyAttackKeyStickTime=juggleryAttackKeyStickTimeDelay;
-		 
-
+		animator.SetBool("grounded",masterCharacter.movementSystem.isGrounded);
 		animator.SetBool("makeAttackJugglery",juggleryAttackKeyAttackKeyStickTime>0);
-
 		animator.SetBool("makeAttackDefault",attackKeyStickTime>0);
 		 
 	    

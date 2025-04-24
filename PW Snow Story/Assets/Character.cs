@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
 	}
 	public void HandleAnimation_Update(Vector2 moveVector)
 	{
-		animationSystem.AnimateByInput(moveVector);
+		animationSystem.AnimateByMovement(moveVector);
 	}
 
 	

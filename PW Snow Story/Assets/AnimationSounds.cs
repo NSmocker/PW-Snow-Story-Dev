@@ -6,7 +6,7 @@ public class AnimationSounds : MonoBehaviour
     public AudioClip swordSlash;
 
     public void PlaySwordSlash()
-    {
+    {   audioSource.pitch=1.0f;
         audioSource.PlayOneShot(swordSlash);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

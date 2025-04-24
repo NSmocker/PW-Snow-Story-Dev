@@ -5713,8 +5713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d40569f77cb82e0439033779d90eb063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterToControll: {fileID: 0}
+  characterToControll: {fileID: 8646798622151954059}
   moveVector: {x: 0, y: 0}
+  defaultAttackKey: 323
+  juggleryAttackKey: 102
+  blockKey: 324
+  getSwordKey: 118
 --- !u!4 &335026572
 Transform:
   m_ObjectHideFlags: 0
@@ -23068,7 +23072,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3504054403798301593, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: field of view
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3504054403798301593, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_BackGroundColor.a
@@ -23088,31 +23092,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35814667
+      value: 0.35814476
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.399523
+      value: -0.7768183
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5039444
+      value: 1.5377502
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.960519
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000078952446
+      value: 0.2782144
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000015178516
+      value: -0.000000028625703
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.19838094e-14
+      value: 0.000000008291436
       objectReference: {fileID: 0}
     - target: {fileID: 3621118894488623793, guid: 1193f88c841412047a845bab27f596ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35590,6 +35594,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.029596746
       objectReference: {fileID: 0}
+    - target: {fileID: 1769152547205815375, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8646798622151954043}
+    - target: {fileID: 1769152547205815375, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
+      propertyPath: masterCharacter
+      value: 
+      objectReference: {fileID: 8646798622151954059}
     - target: {fileID: 1769152547205815375, guid: ac907051e1f20874fa8db5e1c9821d43, type: 3}
       propertyPath: juggleryAttackKey
       value: 102

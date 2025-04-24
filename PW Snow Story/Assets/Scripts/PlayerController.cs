@@ -30,21 +30,19 @@ public class PlayerController : MonoBehaviour
 
 
 
+
+
     void Update()
     {
 		#region KeyReading
         moveVector.x = Input.GetAxis("Horizontal");
 	    moveVector.y = Input.GetAxis("Vertical");
 		if (Input.GetButtonDown("Jump")) characterToControll.movementSystem.MakeJump(); 
-		if(Input.GetKeyDown(blockKey))
-		{
-			characterToControll.animationSystem.SetBlockingState(true);
-		}
-		if(Input.GetKeyUp(blockKey))
-		{
-			characterToControll.animationSystem.SetBlockingState(false);
-		}
-
+		
+		characterToControll.animationSystem.SetBlockingState(Input.GetButton("Block"),Input.GetAxis("BlockAxis"));
+		
+		if(Input.GetKeyDown(defaultAttackKey))characterToControll.animationSystem.MakeAttack_Click();
+		if(Input.GetKeyDown(juggleryAttackKey))characterToControll.animationSystem.MakeAttackJugglery_Click();
 
 
 
