@@ -13,6 +13,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 	public Character characterToControll;
+	public TargetLocker targetLocker;
+	public DirectionPointer directionPointer;
 	
 	[Header("KeysBinding")]
 	public Vector2 moveVector;
@@ -23,9 +25,15 @@ public class PlayerController : MonoBehaviour
 	public KeyCode getSwordKey = KeyCode.V;
 
     
+	void Start()
+	{
+			BindPlayerSystems();
+	}
+
     public void BindPlayerSystems()
 	{
-
+		directionPointer = characterToControll.directionPointer;
+		targetLocker.directionPointer = directionPointer;
 	}
 
 

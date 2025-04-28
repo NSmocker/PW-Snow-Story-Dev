@@ -5738,6 +5738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterToControll: {fileID: 8646798622151954059}
+  targetLocker: {fileID: 1146879213}
+  directionPointer: {fileID: 0}
   moveVector: {x: 0, y: 0}
   defaultAttackKey: 323
   juggleryAttackKey: 102
@@ -21378,8 +21380,8 @@ Cloth:
   m_WorldAccelerationScale: 1
   m_Friction: 0.5
   m_CollisionMassScale: 0
-  m_UseContinuousCollision: 1
-  m_UseVirtualParticles: 1
+  m_UseContinuousCollision: 0
+  m_UseVirtualParticles: 0
   m_SolverFrequency: 120
   m_SleepThreshold: 0.1
   m_Coefficients:
