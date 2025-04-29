@@ -1,26 +1,34 @@
 using System;
 using UnityEngine;
 
+
+
 public class Character : MonoBehaviour
 {
+
+	public bool isGrounded;
+	public bool isAttacking;
+
+	
    	public CharacterMovement movementSystem;
 	public AnimationSystem animationSystem;
 	public InventorySystem inventorySystem;
 	public Weapon weapon;
 	public DirectionPointer directionPointer;
+    public Transform lookAtPoint;
+	public Transform targetLookAtPoint;
+	
 
-	public CameraModeSwitcher cameraModeSwitcher;
-	
-	
 
-	
-	// Start is called before the first frame update
+
+    // Start is called before the first frame update
     void Start()
     {
        
     }
 	public void HandleMovement_FixedUpdate(Vector2 moveVector)
 	{
+		
 		movementSystem.MoveByCamera(moveVector);
 		if(animationSystem.isBlocking)
 		{
@@ -46,7 +54,7 @@ public class Character : MonoBehaviour
 			if(directionPointer.target!=null)
 			{
 				directionPointer.isTargetLocked=true;
-				cameraModeSwitcher.ToTargetGroupCamera();
+				
 				
 				
 			}
@@ -60,7 +68,7 @@ public class Character : MonoBehaviour
 		}
 		else
 		{
-			cameraModeSwitcher.ToOrbitalCamera();
+			
 			directionPointer.isTargetLocked=false;
 			directionPointer.target = null;
 			
@@ -104,7 +112,8 @@ public class Character : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		
+		isGrounded = movementSystem.isGrounded;
+		isAttacking = animationSystem.attackKeyStickTime>0;
 		
 	}
     void Update()

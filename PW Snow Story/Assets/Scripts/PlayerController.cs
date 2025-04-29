@@ -15,7 +15,12 @@ public class PlayerController : MonoBehaviour
 	public Character characterToControll;
 	public TargetLocker targetLocker;
 	public DirectionPointer directionPointer;
+	public CameraModeSwitcher cameraSwitcher;
+
 	
+
+	
+
 	[Header("KeysBinding")]
 	public Vector2 moveVector;
 	public KeyCode defaultAttackKey = KeyCode.Mouse0;
@@ -23,6 +28,8 @@ public class PlayerController : MonoBehaviour
 	public KeyCode blockKey = KeyCode.Mouse1;
 	 
 	public KeyCode getSwordKey = KeyCode.V;
+
+
 
     
 	void Start()
@@ -48,7 +55,9 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Jump")) characterToControll.movementSystem.MakeJump(); 
 		
 		characterToControll.animationSystem.SetBlockingState(Input.GetButton("Block"),Input.GetAxis("BlockAxis"));
-		
+		if(Input.GetButton("Block")) cameraSwitcher.SetCameraConfigs(characterToControll.targetLookAtPoint);
+		else cameraSwitcher.SetCameraConfigs(characterToControll.lookAtPoint);
+
 		if(Input.GetKeyDown(defaultAttackKey))characterToControll.animationSystem.MakeAttack_Click();
 		if(Input.GetKeyDown(juggleryAttackKey))characterToControll.animationSystem.MakeAttackJugglery_Click();
 
@@ -67,6 +76,10 @@ public class PlayerController : MonoBehaviour
 	void FixedUpdate()
     {
         characterToControll.HandleMovement_FixedUpdate(moveVector);
+
+		cameraSwitcher.cameraOffseted = !characterToControll.isGrounded || characterToControll.isAttacking;
+	
+
     }
 
 

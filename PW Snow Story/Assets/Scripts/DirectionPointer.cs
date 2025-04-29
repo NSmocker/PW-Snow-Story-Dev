@@ -9,9 +9,11 @@ public class DirectionPointer : MonoBehaviour
     public bool isTargetLocked;
     public GameObject target;
 
+    Transform parentTransform;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   parentTransform = transform.parent;
         //берем назву нашого батька
         name = transform.parent.name+ " " + name;
         //Відв'язуємось, щоб не залежити від оберту батьківських об'єктів
@@ -22,7 +24,7 @@ public class DirectionPointer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        transform.position = cameraObject.transform.position;
 
        
         if(!isTargetLocked)
