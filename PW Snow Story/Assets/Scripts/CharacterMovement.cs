@@ -96,6 +96,7 @@ public class CharacterMovement : MonoBehaviour
 	public void RotateCharacterToDirectionPointer(Transform directionPointer)
 	{
 		characterController.transform.rotation = directionPointer.rotation;
+		print("Character rotation to direction pointer");
 	}
 	void CheckGround_FixedUpdate()
 	{

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 
 
@@ -13,7 +13,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 	public Character characterToControll;
-	public TargetLocker targetLocker;
+	
 	public DirectionPointer directionPointer;
 	public CameraModeSwitcher cameraSwitcher;
 
@@ -34,13 +34,17 @@ public class PlayerController : MonoBehaviour
     
 	void Start()
 	{
-			BindPlayerSystems();
+		Cursor.lockState = CursorLockMode.Locked;
+		BindPlayerSystems();
 	}
 
     public void BindPlayerSystems()
 	{
 		directionPointer = characterToControll.directionPointer;
-		targetLocker.directionPointer = directionPointer;
+		
+
+	
+	
 	}
 
 
@@ -55,8 +59,8 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Jump")) characterToControll.movementSystem.MakeJump(); 
 		
 		characterToControll.animationSystem.SetBlockingState(Input.GetButton("Block"),Input.GetAxis("BlockAxis"));
-		if(Input.GetButton("Block")) cameraSwitcher.SetCameraConfigs(characterToControll.targetLookAtPoint);
-		else cameraSwitcher.SetCameraConfigs(characterToControll.lookAtPoint);
+		
+
 
 		if(Input.GetKeyDown(defaultAttackKey))characterToControll.animationSystem.MakeAttack_Click();
 		if(Input.GetKeyDown(juggleryAttackKey))characterToControll.animationSystem.MakeAttackJugglery_Click();

@@ -17,13 +17,7 @@ public class CameraModeSwitcher : MonoBehaviour
     float offsetDistanceValue=0;
 	public float offsetDistanceSpeed=0.1f;
     
-    
-    public void SetCameraConfigs(Transform cameraTarget)
-    {
-        orbitalCamera.Target.LookAtTarget = cameraTarget;
-    }
 
-  
     
 
   

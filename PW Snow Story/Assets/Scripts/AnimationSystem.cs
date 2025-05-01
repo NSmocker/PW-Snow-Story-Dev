@@ -18,12 +18,16 @@ public class AnimationSystem : MonoBehaviour
 	[Header("States")]
 	public bool weaponIsOn; 
 	public bool isBlocking;
+	public bool isAttacking;
 
     
 	
 	[Header("Attacks")]
 	public float attackKeyStickTime ;
 	public float attackKeyStickTimeDelay = 0.1f;
+
+	float attackStatusTime = 0.5f;
+
 	public float juggleryAttackKeyAttackKeyStickTime ;
 	public float juggleryAttackKeyStickTimeDelay = 0.1f;
 	
@@ -31,14 +35,20 @@ public class AnimationSystem : MonoBehaviour
 	public AnimationCurve blockCurve;
 	public void SetBlockingState(bool BlockingState,float blockAxis)
 	{	
-		 
-			
-			
-		 	
-	  	animator.SetLayerWeight(2,blockAxis);
+		if(!isAttacking)
+		{
+			animator.SetLayerWeight(2,blockAxis);
+			animator.SetBool("Block/Lock",BlockingState);
+			isBlocking=BlockingState;
+		}else
+		{
+			animator.SetLayerWeight(2,0);
+			animator.SetBool("Block/Lock",false);
+			isBlocking=false;
+		}
+	  	
 
-		animator.SetBool("Block/Lock",BlockingState);
-		isBlocking=BlockingState;
+
 	}
 
 	public void AnimateByMovement(Vector2 moveInfo)
@@ -69,30 +79,31 @@ public class AnimationSystem : MonoBehaviour
     // Update is called once per frame
    
 	public void MakeAttack_Click()
-	{
+	{   
+		attackStatusTime = 0.5f;
 		attackKeyStickTime=attackKeyStickTimeDelay;
 	}
 	public void MakeAttackJugglery_Click()
-	{
+	{	
+		attackStatusTime = 0.5f;
 		juggleryAttackKeyAttackKeyStickTime=juggleryAttackKeyStickTimeDelay;
 	}
 
+
+	void Timers_Update()
+	{
+		if(attackStatusTime>0)attackStatusTime-=Time.deltaTime;
+		if(attackKeyStickTime>0)attackKeyStickTime-=Time.deltaTime;
+		if(juggleryAttackKeyAttackKeyStickTime>0)juggleryAttackKeyAttackKeyStickTime-=Time.deltaTime;
+	}
 
     void Update()
     {
 
 		if(Time.timeScale == 0) return;
+		Timers_Update();
+		isAttacking = attackStatusTime > 0;
 		animator.applyRootMotion = masterCharacter.movementSystem.isGrounded;
-		
-		
-		
-		if(attackKeyStickTime>0)attackKeyStickTime-=Time.deltaTime;
-		if(juggleryAttackKeyAttackKeyStickTime>0)juggleryAttackKeyAttackKeyStickTime-=Time.deltaTime;
-		
-		
-
-		
-		
 		animator.SetBool("wasComboInFloat",masterCharacter.movementSystem.wasComboInFloat);
 	    animator.SetFloat("movementMagnitude",movementMagnitude);
 	    animator.SetFloat("movementHorizontal",moveVector.x);

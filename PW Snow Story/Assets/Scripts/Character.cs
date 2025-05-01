@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -8,6 +9,7 @@ public class Character : MonoBehaviour
 
 	public bool isGrounded;
 	public bool isAttacking;
+	public bool isBlocking;
 
 	
    	public CharacterMovement movementSystem;
@@ -15,8 +17,9 @@ public class Character : MonoBehaviour
 	public InventorySystem inventorySystem;
 	public Weapon weapon;
 	public DirectionPointer directionPointer;
+	public TargetPointer targetPointer;
     public Transform lookAtPoint;
-	public Transform targetLookAtPoint;
+	
 	
 
 
@@ -26,18 +29,51 @@ public class Character : MonoBehaviour
     {
        
     }
+	public void RotateToNearestTarget_AnimationEvent()
+	{	
+		if(targetPointer.nearestTarget!=null)
+		{
+			
+			print("RotateToNearestTarget_AnimationEvent");
+			
+			
+			if(targetPointer.distanceToTarget!= -1f && targetPointer.distanceToTarget < targetPointer.minDistanceToAttackLook)
+			{
+				targetPointer.MakeNearestToTarget();
+				targetPointer.LookAtTarget();
+				movementSystem.RotateCharacterToDirectionPointer(targetPointer.transform);
+			}
+		}
+		else
+		{
+			print("No nearest target to rotate to");
+		}
+	}
+	 
+
+
 	public void HandleMovement_FixedUpdate(Vector2 moveVector)
 	{
 		
 		movementSystem.MoveByCamera(moveVector);
 		if(animationSystem.isBlocking)
 		{
-			if(directionPointer.target!=null)movementSystem.RotateCharacterToDirectionPointer(directionPointer.transform);
+			if(targetPointer.target==null)targetPointer.MakeNearestToTarget();
+			if(targetPointer.target!=null)
+			{
+			  targetPointer.LookAtTarget();
+			  movementSystem.RotateCharacterToDirectionPointer(targetPointer.transform);
+			}
 			
 		}
 		else
-		{
-			movementSystem.RotateCharacterByCamera(moveVector,directionPointer.transform);
+		{	
+			
+			if(moveVector.magnitude!=0 && !animationSystem.isAttacking )
+			{
+				movementSystem.RotateCharacterByCamera(moveVector,directionPointer.transform);
+				print("RotateCharacterByCamera");
+			}
 		}
 	}
 	public void HandleAnimation_Update(Vector2 moveVector)
@@ -46,35 +82,7 @@ public class Character : MonoBehaviour
 	}
 
 	
-	public void CheckLockTarget_Update()
-	{
-		if(animationSystem.isBlocking)
-		{
-			GetWeaponInArmBackGrip();
-			if(directionPointer.target!=null)
-			{
-				directionPointer.isTargetLocked=true;
-				
-				
-				
-			}
-			else
-			{
-				directionPointer.isTargetLocked=true;
-				
-				
-			}
-			
-		}
-		else
-		{
-			
-			directionPointer.isTargetLocked=false;
-			directionPointer.target = null;
-			
-			
-		}
-	}
+	
 	public void GetWeaponInArm()
 	{
 		weapon.SetOnArm();
@@ -113,15 +121,22 @@ public class Character : MonoBehaviour
 	void FixedUpdate()
 	{
 		isGrounded = movementSystem.isGrounded;
-		isAttacking = animationSystem.attackKeyStickTime>0;
-		
+		isAttacking = animationSystem.isAttacking;
+		isBlocking = animationSystem.isBlocking;
 	}
     void Update()
     {
 	    
+		if(isAttacking)
+		{
+			RotateToNearestTarget_AnimationEvent();
+			GetWeaponInArm();
 		
-		CheckLockTarget_Update();
-		
+		}
+		if(isBlocking)
+		{
+			GetWeaponInArmBackGrip();
+		}
 	    
 	    
 	    
