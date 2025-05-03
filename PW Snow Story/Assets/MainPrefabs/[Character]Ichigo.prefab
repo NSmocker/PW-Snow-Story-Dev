@@ -1193,7 +1193,7 @@ Transform:
   m_GameObject: {fileID: 2541902660199264543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.37110585, y: -0.0137458565, z: 0.9141433, w: 0.16258384}
-  m_LocalPosition: {x: -0.0040016174, y: 1.5910017, z: -0.21501541}
+  m_LocalPosition: {x: -0.0040016174, y: 1.5910015, z: -0.21501541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1902,6 +1902,9 @@ GameObject:
   - component: {fileID: 7563035430587076928}
   - component: {fileID: 6606684732911765550}
   - component: {fileID: 6387232056456124753}
+  - component: {fileID: 6981237656852636237}
+  - component: {fileID: 3701282238327926470}
+  - component: {fileID: 1646905617453218098}
   m_Layer: 0
   m_Name: '[Weapon] 95 Morai Sword'
   m_TagString: Untagged
@@ -2130,6 +2133,71 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &6981237656852636237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593166389090343804}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.2783065, y: 9.702941, z: 0.41007835}
+  m_Center: {x: 0.0020631996, y: 3.3451636, z: -0.00017544693}
+--- !u!114 &3701282238327926470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593166389090343804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63a6e4ce89e995419a37628c178c902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fleshHitSounds:
+  - {fileID: 8300000, guid: 3610df85f8136e3489a2b7eb02482817, type: 3}
+  - {fileID: 8300000, guid: a0a6105500839d349831916496925c0c, type: 3}
+  stoneHitSounds: []
+  damage: 5
+--- !u!54 &1646905617453218098
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593166389090343804}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &3642581436180650054
 GameObject:
   m_ObjectHideFlags: 0
@@ -8001,12 +8069,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc04d4c7cc0328b459a470df06abef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scanRadius: 10
+  scanRadius: 6
   monsters: []
   nearestTarget: {fileID: 0}
   target: {fileID: 0}
   distanceToTarget: 0
-  minDistanceToAttackLook: 7
+  minDistanceToAttackLook: 5
 --- !u!1 &5704172263931198186
 GameObject:
   m_ObjectHideFlags: 0
@@ -10938,6 +11006,7 @@ MonoBehaviour:
   animationSystem: {fileID: 1769152547205815375}
   inventorySystem: {fileID: 9006529967262750413}
   weapon: {fileID: 6606684732911765550}
+  weaponHitBox: {fileID: 3701282238327926470}
   directionPointer: {fileID: 1123095854369408048}
   targetPointer: {fileID: 4841100934133520268}
   lookAtPoint: {fileID: 3882852206268791788}
@@ -16996,7 +17065,7 @@ Transform:
   m_GameObject: {fileID: 9147238603810001689}
   serializedVersion: 2
   m_LocalRotation: {x: -0.8421528, y: -0.039043177, z: 0.055613462, w: -0.5349406}
-  m_LocalPosition: {x: 0.68377113, y: 1.2816032, z: -0.24337387}
+  m_LocalPosition: {x: 0.68377113, y: 1.2816033, z: -0.24337387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
