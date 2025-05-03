@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
 	public AnimationSystem animationSystem;
 	public InventorySystem inventorySystem;
 	public Weapon weapon;
+	public HitBox weaponHitBox;
 	public DirectionPointer directionPointer;
 	public TargetPointer targetPointer;
     public Transform lookAtPoint;
@@ -29,17 +30,29 @@ public class Character : MonoBehaviour
     {
        
     }
+
+	public void ActivateHitBox_AnimationEvent()
+	{
+		weaponHitBox.Activate();
+	}
+
+	public void DeactivateHitBox_AnimationEvent()
+	{
+		weaponHitBox.Deactivate();
+	}
+	
+
 	public void RotateToNearestTarget_AnimationEvent()
 	{	
 		if(targetPointer.nearestTarget!=null)
 		{
 			
 			print("RotateToNearestTarget_AnimationEvent");
-			
+			targetPointer.MakeNearestToTarget();
 			
 			if(targetPointer.distanceToTarget!= -1f && targetPointer.distanceToTarget < targetPointer.minDistanceToAttackLook)
 			{
-				targetPointer.MakeNearestToTarget();
+				
 				targetPointer.LookAtTarget();
 				movementSystem.RotateCharacterToDirectionPointer(targetPointer.transform);
 			}
@@ -50,8 +63,6 @@ public class Character : MonoBehaviour
 		}
 	}
 	 
-
-
 	public void HandleMovement_FixedUpdate(Vector2 moveVector)
 	{
 		
