@@ -18,7 +18,8 @@ public class TargetPointer : MonoBehaviour
     {
         if(target!=null)
         {
-            print("Looking at target: " + target.name);
+            
+            
             transform.LookAt(target.transform.position);
             var myAngles = transform.eulerAngles;
             myAngles.x = 0;

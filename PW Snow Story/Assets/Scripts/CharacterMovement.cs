@@ -7,6 +7,7 @@ using UnityEngine.VFX;
 public class CharacterMovement : MonoBehaviour
 {
 
+	public Character masterCharacter;
 	[Header("Audio Bindings")]
 	public AudioSource audioSource;
 	public AudioClip jumpSound;
@@ -42,7 +43,7 @@ public class CharacterMovement : MonoBehaviour
 	{ 
 		if(input.magnitude>0.5 && !isGrounded)
 		{
-			 characterController.Move(transform.forward*input.magnitude*moveSpeed*Time.fixedDeltaTime);
+			if(!masterCharacter.isAttacking)characterController.Move(transform.forward*input.magnitude*moveSpeed*Time.fixedDeltaTime);
 		} 
 	}
 	public void MakeJump()

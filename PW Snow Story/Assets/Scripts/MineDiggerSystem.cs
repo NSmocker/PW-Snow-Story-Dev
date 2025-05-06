@@ -8,6 +8,7 @@ public class MineDiggerSystem : MonoBehaviour
     public CharacterMovement characterMovement;
     public AnimationSystem animationSystem;
     public InventorySystem inventorySystem;
+    public InventoryItemAddNotification inventoryItemAddNotification;
     public float radius = 5.0f;
     public GameObject mineItem;
     public bool canMine,isMining;
@@ -22,9 +23,8 @@ public class MineDiggerSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        inventoryItemAddNotification = GameObject.Find("ItemAddedNotification").GetComponent<InventoryItemAddNotification>();
     }
-
     void CheckItemsForMineUpdate()
     {
         if(isMining)
@@ -63,7 +63,7 @@ public class MineDiggerSystem : MonoBehaviour
         animator.Play("Mining");
         var mineItemBihaviour = mineItem.GetComponent<MineItemBihaviour>();
         miningEndTime = mineItemBihaviour.miningTime;
-        walkingCamera.SetActive(false);
+        
         mineItemBihaviour.cameraLink.SetActive(true);
         characterController.enabled = false;
         characterController.gameObject.transform.position = mineItemBihaviour.digPositioin.transform.position;
@@ -83,9 +83,10 @@ public class MineDiggerSystem : MonoBehaviour
         animationSystem.enabled=true;
         characterController.enabled = true;
         mineItem.GetComponent<MineItemBihaviour>().cameraLink.SetActive(false);
-        walkingCamera.SetActive(true);
+       
         var inventoryItemToAdd = mineItem.GetComponent<MineItemBihaviour>().inventoryItem;
-        AddMineItemToInventory(inventoryItemToAdd);
+        AddMineItemToInventory(inventoryItemToAdd.gameObject);
+        inventoryItemAddNotification.ShowNotification(inventoryItemToAdd.itemName, inventoryItemToAdd.itemSprite);
         Destroy(mineItem.gameObject);
 
     }

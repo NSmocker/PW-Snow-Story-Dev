@@ -13,7 +13,9 @@ public class DirectionPointer : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   parentTransform = transform.parent;
+    {   
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        parentTransform = transform.parent;
         //берем назву нашого батька
         name = transform.parent.name+ " " + name;
         //Відв'язуємось, щоб не залежити від оберту батьківських об'єктів

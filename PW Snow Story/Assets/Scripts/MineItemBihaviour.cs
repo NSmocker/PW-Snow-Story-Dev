@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MineItemBihaviour : MonoBehaviour
 {
-    public GameObject inventoryItem;
+    public InventoryItem inventoryItem;
     public float miningTime = 6f;
     public GameObject cameraLink;
     public GameObject digPositioin;

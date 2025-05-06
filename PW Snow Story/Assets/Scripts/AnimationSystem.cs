@@ -19,6 +19,7 @@ public class AnimationSystem : MonoBehaviour
 	public bool weaponIsOn; 
 	public bool isBlocking;
 	public bool isAttacking;
+	public bool isSprinting;
 
     
 	
@@ -88,7 +89,14 @@ public class AnimationSystem : MonoBehaviour
 		attackStatusTime = 0.5f;
 		juggleryAttackKeyAttackKeyStickTime=juggleryAttackKeyStickTimeDelay;
 	}
-
+	public void SetSprintState(float sprintAxis)
+	{
+		print("Sprint Axis: "+sprintAxis);
+		isSprinting = sprintAxis > 0.5f;
+		animator.SetFloat("Sprint",sprintAxis);
+		
+	}
+	
 
 	void Timers_Update()
 	{
@@ -111,7 +119,7 @@ public class AnimationSystem : MonoBehaviour
 		animator.SetBool("grounded",masterCharacter.movementSystem.isGrounded);
 		animator.SetBool("makeAttackJugglery",juggleryAttackKeyAttackKeyStickTime>0);
 		animator.SetBool("makeAttackDefault",attackKeyStickTime>0);
-		 
+		
 	    
     }
 }

@@ -9,12 +9,14 @@ public class Character : MonoBehaviour
 
 	public bool isGrounded;
 	public bool isAttacking;
-	public bool isBlocking;
+	public bool isMining;
+	
 
 	
    	public CharacterMovement movementSystem;
 	public AnimationSystem animationSystem;
 	public InventorySystem inventorySystem;
+	public MineDiggerSystem mineDiggerSystem;
 	public Weapon weapon;
 	public HitBox weaponHitBox;
 	public DirectionPointer directionPointer;
@@ -115,16 +117,18 @@ public class Character : MonoBehaviour
 	}
 	public void AirComboFloatStart()
 	{
-		if(!movementSystem.wasComboInFloat)
-		{
+		
 			movementSystem.isFloating=true;
 			movementSystem.wasComboInFloat=true;
-		}
+		
 	}
-	public void AirComboFloatEnd()
+
+	public void SetFallingState()
 	{
 		movementSystem.isFloating=false;
+		 
 	}
+	
 	
 
     // Update is called once per frame
@@ -133,7 +137,8 @@ public class Character : MonoBehaviour
 	{
 		isGrounded = movementSystem.isGrounded;
 		isAttacking = animationSystem.isAttacking;
-		isBlocking = animationSystem.isBlocking;
+		isMining = mineDiggerSystem.isMining;
+	
 	}
     void Update()
     {
@@ -144,10 +149,7 @@ public class Character : MonoBehaviour
 			GetWeaponInArm();
 		
 		}
-		if(isBlocking)
-		{
-			GetWeaponInArmBackGrip();
-		}
+		
 	    
 	    
 	    

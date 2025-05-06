@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 	public KeyCode defaultAttackKey = KeyCode.Mouse0;
 	public KeyCode juggleryAttackKey = KeyCode.Mouse0;
 	public KeyCode blockKey = KeyCode.Mouse1;
-	 
+	public string sprintButton = "Sprint";
 	public KeyCode getSwordKey = KeyCode.V;
 
 
@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
         moveVector.x = Input.GetAxis("Horizontal");
 	    moveVector.y = Input.GetAxis("Vertical");
 		if (Input.GetButtonDown("Jump")) characterToControll.movementSystem.MakeJump(); 
+	    characterToControll.animationSystem.SetSprintState(Input.GetAxis("Sprint"));
 		
-		characterToControll.animationSystem.SetBlockingState(Input.GetButton("Block"),Input.GetAxis("BlockAxis"));
 		
 
 
