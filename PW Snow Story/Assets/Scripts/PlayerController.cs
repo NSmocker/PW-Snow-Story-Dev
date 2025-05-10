@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 	
 	public DirectionPointer directionPointer;
 	public CameraModeSwitcher cameraSwitcher;
+
 
 	
 
