@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 
 
@@ -16,6 +18,9 @@ public class PlayerController : MonoBehaviour
 	
 	public DirectionPointer directionPointer;
 	public CameraModeSwitcher cameraSwitcher;
+	public Volume volume;
+	MotionBlur motionBlur;
+
 
 
 	
@@ -37,6 +42,7 @@ public class PlayerController : MonoBehaviour
 	{
 		Cursor.lockState = CursorLockMode.Locked;
 		BindPlayerSystems();
+		volume.profile.TryGet<MotionBlur>(out motionBlur);
 	}
 
     public void BindPlayerSystems()
@@ -60,20 +66,15 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetButtonDown("Jump")) characterToControll.movementSystem.MakeJump(); 
 	    characterToControll.animationSystem.SetSprintState(Input.GetAxis("Sprint"));
 		
-		
-
-
 		if(Input.GetKeyDown(defaultAttackKey))characterToControll.animationSystem.MakeAttack_Click();
 		if(Input.GetKeyDown(juggleryAttackKey))characterToControll.animationSystem.MakeAttackJugglery_Click();
-
-
-
-
-
 		#endregion
 
 
+		motionBlur.active = Input.GetAxis("Sprint")!=0;
 
+
+		
 		characterToControll.HandleAnimation_Update(moveVector);
 
     }

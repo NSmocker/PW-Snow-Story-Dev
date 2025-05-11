@@ -104,7 +104,11 @@ public class CharacterMovement : MonoBehaviour
 		isGrounded = Physics.CheckSphere(transform.position, characterController.radius+radius_offset, groundLayer);
 	}
   
-
+	public void FastLandDown()
+	{
+	  isFloating=false;
+	  velocity.y=-0.5f;
+	}
 
 
   /********* EVENTS *********/

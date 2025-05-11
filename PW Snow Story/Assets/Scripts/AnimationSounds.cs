@@ -2,17 +2,33 @@ using UnityEngine;
 
 public class AnimationSounds : MonoBehaviour
 {
-    AudioSource audioSource;
-    public AudioClip swordSlash;
+   
+    public AudioSource skillAudioSource;
+    public AudioClip autoAttack;
+    public AudioClip[] autoAttackClips;
+    public AudioClip[] audioClips;
 
+    public void PlaySound(string soundName)
+    {   skillAudioSource.pitch=1.0f;
+        foreach (AudioClip clip in audioClips)
+        {
+            if (clip.name == soundName)
+            {
+                skillAudioSource.PlayOneShot(clip);
+                return;
+            }
+        }
+        Debug.LogWarning("Sound not found: " + soundName);
+    }
     public void PlaySwordSlash()
-    {   audioSource.pitch=1.0f;
-        audioSource.PlayOneShot(swordSlash);
+    {   
+
+        skillAudioSource.PlayOneShot(autoAttackClips[Random.Range(0, autoAttackClips.Length)]);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+       
     }
 
     // Update is called once per frame

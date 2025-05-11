@@ -128,7 +128,10 @@ public class Character : MonoBehaviour
 		movementSystem.isFloating=false;
 		 
 	}
-	
+	public void FastLandDown_AnimationEvent()
+	{
+		movementSystem.FastLandDown();
+	}
 	
 
     // Update is called once per frame
