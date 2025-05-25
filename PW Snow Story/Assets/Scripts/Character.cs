@@ -49,7 +49,7 @@ public class Character : MonoBehaviour
 		if(targetPointer.nearestTarget!=null)
 		{
 			
-			print("RotateToNearestTarget_AnimationEvent");
+			//print("RotateToNearestTarget_AnimationEvent");
 			targetPointer.MakeNearestToTarget();
 			
 			if(targetPointer.distanceToTarget!= -1f && targetPointer.distanceToTarget < targetPointer.minDistanceToAttackLook)
@@ -61,7 +61,7 @@ public class Character : MonoBehaviour
 		}
 		else
 		{
-			print("No nearest target to rotate to");
+			//print("No nearest target to rotate to");
 		}
 	}
 	 
@@ -99,7 +99,7 @@ public class Character : MonoBehaviour
 	public void GetWeaponInArm()
 	{
 		weapon.SetOnArm();
-		
+		print("Set On Arm");	
 	}
 	public void GetWeaponInArmBackGrip()
 	{
@@ -150,7 +150,7 @@ public class Character : MonoBehaviour
 		{
 			RotateToNearestTarget_AnimationEvent();
 			GetWeaponInArm();
-		
+			print("isAttacking");
 		}
 		
 	    

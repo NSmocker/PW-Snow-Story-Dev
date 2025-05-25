@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
         transform.parent = arm;
         transform.localPosition = Vector3.zero;
         transform.localEulerAngles = Vector3.zero;
+        
     }
     public void SetOnArmBackGrip()
     {

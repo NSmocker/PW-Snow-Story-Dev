@@ -60,13 +60,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+		if (Time.timeScale == 0) return;	
 		#region KeyReading
         moveVector.x = Input.GetAxis("Horizontal");
 	    moveVector.y = Input.GetAxis("Vertical");
 		if (Input.GetButtonDown("Jump")) characterToControll.movementSystem.MakeJump(); 
 	    characterToControll.animationSystem.SetSprintState(Input.GetAxis("Sprint"));
-		
-		if(Input.GetKeyDown(defaultAttackKey))characterToControll.animationSystem.MakeAttack_Click();
+		if (Input.GetKeyDown(defaultAttackKey)) characterToControll.animationSystem.MakeAttack_Click();
 		if(Input.GetKeyDown(juggleryAttackKey))characterToControll.animationSystem.MakeAttackJugglery_Click();
 		#endregion
 

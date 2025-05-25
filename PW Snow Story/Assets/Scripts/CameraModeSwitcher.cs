@@ -12,9 +12,9 @@ public class CameraModeSwitcher : MonoBehaviour
 
     
     [Header("Camera Offset")]  
-    public CinemachineCameraOffset cameraOffset;
+    public CinemachineOrbitalFollow cameraOrbit;
     public bool cameraOffseted;
-    float offsetDistanceValue=0;
+ 
 	public float offsetDistanceSpeed=0.1f;
     
 
@@ -37,14 +37,14 @@ public class CameraModeSwitcher : MonoBehaviour
     {
           if(cameraOffseted)
 		{
-			offsetDistanceValue = Mathf.Lerp(offsetDistanceValue, -2, Time.fixedDeltaTime * offsetDistanceSpeed);
+			cameraOrbit.RadialAxis.Value = Mathf.Lerp(cameraOrbit.RadialAxis.Value, 2, Time.fixedDeltaTime * offsetDistanceSpeed);
 			
 		}
 		else
 		{
-			if(offsetDistanceValue!=0)offsetDistanceValue = Mathf.Lerp(offsetDistanceValue, 0, Time.fixedDeltaTime * offsetDistanceSpeed);
+			if(cameraOrbit.RadialAxis.Value!=1)cameraOrbit.RadialAxis.Value = Mathf.Lerp(cameraOrbit.RadialAxis.Value, 1, Time.fixedDeltaTime * offsetDistanceSpeed);
 			 
 		}
-		cameraOffset.Offset.z = offsetDistanceValue;
+		
     }
 }

@@ -27,7 +27,7 @@ public class AnimationSystem : MonoBehaviour
 	public float attackKeyStickTime ;
 	public float attackKeyStickTimeDelay = 0.1f;
 
-	float attackStatusTime = 0.5f;
+	public float attackStatusTime = -1f;
 
 	public float juggleryAttackKeyAttackKeyStickTime ;
 	public float juggleryAttackKeyStickTimeDelay = 0.1f;
@@ -91,7 +91,7 @@ public class AnimationSystem : MonoBehaviour
 	}
 	public void SetSprintState(float sprintAxis)
 	{
-		print("Sprint Axis: "+sprintAxis);
+		
 		isSprinting = sprintAxis > 0.5f;
 		animator.SetFloat("Sprint",sprintAxis);
 		
