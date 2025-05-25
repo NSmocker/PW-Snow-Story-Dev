@@ -33,6 +33,7 @@ public class Health : MonoBehaviour, IDamageable
     [ContextMenu("Die")]
    public void Die()
     {   
+        
         animator.Play("Death");
         OnDeath.Invoke();
        

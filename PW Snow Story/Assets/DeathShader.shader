@@ -10,6 +10,7 @@ Shader "Custom/EmissionWithHDRIReflection"
         _HDRIReflection ("HDRI Reflection (Equirectangular)", 2D) = "white" {}
         _ReflectionIntensity ("Reflection Intensity", Range(0,1)) = 0.5
         _Smoothness ("Smoothness", Range(0,1)) = 0.5
+        [Toggle] _DoubleSided ("Double Sided", Float) = 0
     }
     SubShader
     {
@@ -45,6 +46,7 @@ Shader "Custom/EmissionWithHDRIReflection"
             sampler2D _HDRIReflection;
             float _ReflectionIntensity;
             float _Smoothness;
+            float _DoubleSided;
 
             // float3 _WorldSpaceCameraPos;
 
@@ -67,6 +69,12 @@ Shader "Custom/EmissionWithHDRIReflection"
                 o.worldNormal = normalize(o.worldNormal);
 
                 o.viewDir = normalize(_WorldSpaceCameraPos - worldPos);
+
+                // Якщо двосторонній режим, інвертуємо нормаль для зворотної сторони
+                #ifdef UNITY_FRONT_FACING
+                if (_DoubleSided > 0.5 && !unity_FrontFacing)
+                    o.worldNormal = -o.worldNormal;
+                #endif
 
                 o.worldRefl = reflect(-o.viewDir, o.worldNormal);
 
@@ -92,6 +100,9 @@ Shader "Custom/EmissionWithHDRIReflection"
                 return fixed4(color + emission, albedo.a);
             }
             ENDCG
+
+            // Додаємо ключ для двостороннього рендеру
+            Cull Off
         }
     }
     FallBack "Diffuse"

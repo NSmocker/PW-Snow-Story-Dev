@@ -33,15 +33,16 @@ public class MonsterMovement : MonoBehaviour
 
     public void PushIntoDirection(Vector3 direction)
     {
-        // Normalize the direction to ensure consistent speed
-        Vector3 normalizedDirection = direction.normalized;
 
-        
 
         // Apply fading effect
-        fadingVelocity += normalizedDirection * fadeSpeed * Time.deltaTime;
+        fadingVelocity = direction;
     }
-
+    public void ResetVeliocity()
+    {
+        velocity = Vector3.zero;
+        fadingVelocity = Vector3.zero;
+    }
     public void FadeVelocity_FixedUpdate()
     {
         if (Mathf.Abs(fadingVelocity.x) < 0.01)

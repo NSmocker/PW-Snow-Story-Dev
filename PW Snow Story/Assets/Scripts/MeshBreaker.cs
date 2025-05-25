@@ -267,16 +267,15 @@ public class TriangleFly : MonoBehaviour
     public float rotateSpeed = 180f;
     public AnimationCurve flyCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
-    // Додаємо параметри для шуму
     public float positionNoiseStrength = 0.2f;
     public float rotationNoiseStrength = 30f;
+    public float upwardStrength = 1.0f;
 
     private Vector3 startPos;
     private Quaternion startRot;
     private float timer = 0f;
     private bool flying = false;
 
-    // Випадкові вектори для шуму
     private Vector3 noiseOffset;
     private Vector3 randomEulerAxis;
 
@@ -287,9 +286,7 @@ public class TriangleFly : MonoBehaviour
         timer = 0f;
         flying = true;
 
-        // Випадковий напрямок для позиційного шуму
         noiseOffset = Random.onUnitSphere;
-        // Випадковий напрямок для додаткового обертання
         randomEulerAxis = Random.onUnitSphere;
     }
 
@@ -300,29 +297,29 @@ public class TriangleFly : MonoBehaviour
         timer += Time.deltaTime;
         float t = Mathf.Clamp01(timer / duration);
 
-        // Використовуємо криву для визначення прогресу
         float curveT = flyCurve != null ? flyCurve.Evaluate(t) : t;
 
-        // Основний рух по нормалі
-        Vector3 basePos = startPos + normal * distance * curveT;
+        Vector3 basePos = startPos
+            + normal * distance * curveT
+            + Vector3.up * upwardStrength * distance * curveT;
 
-        // Додаємо шум до позиції (перлін або синусоїда)
         float noiseT = Mathf.PerlinNoise(timer, noiseOffset.x) - 0.5f;
-        Vector3 noise = noiseOffset * positionNoiseStrength * noiseT * (1f - t); // шум зменшується до кінця
+        Vector3 noise = noiseOffset * positionNoiseStrength * noiseT * (1f - t);
 
         transform.position = basePos + noise;
 
-        // Обертання навколо всіх трьох осей
         float rotAmount = rotateSpeed * Time.deltaTime;
-        // Основне обертання по нормалі
         transform.Rotate(normal, rotAmount, Space.World);
-        // Додаємо додаткове обертання по випадковій осі
         transform.Rotate(randomEulerAxis, rotationNoiseStrength * Mathf.Sin(timer * 2f) * Time.deltaTime, Space.World);
+
+        // Додаємо зменшення масштабу до нуля під час польоту
+        float scale = Mathf.Lerp(1f, 0f, t);
+        transform.localScale = Vector3.one * scale;
 
         if (t >= 1f)
         {
             flying = false;
-            Destroy(gameObject); // Самознищення трикутника
+            Destroy(gameObject);
         }
     }
 }

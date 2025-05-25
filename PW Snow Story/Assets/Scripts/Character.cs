@@ -30,8 +30,32 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       weaponHitBox.masterCharacter = this;
     }
+	public void HitBoxPushForward()
+	{
+		weaponHitBox.pushForward = true;
+	}
+	public void HitBoxPushForwardOff()
+	{
+		weaponHitBox.pushForward = false;
+	 }
+	public void HitBoxPushUp()
+	{
+		weaponHitBox.pushUp = true;
+	}
+	public void HitBoxPushUpOff()
+	{
+		weaponHitBox.pushUp = false;
+	}
+	public void HitBoxResetEnemyVelecity()
+	{
+		weaponHitBox.resetEnemyVelocity = true;
+	}
+	public void HitBoxOffResetEnemyVelecity()
+	{
+		weaponHitBox.resetEnemyVelocity = false;
+	}
 
 	public void ActivateHitBox_AnimationEvent()
 	{
