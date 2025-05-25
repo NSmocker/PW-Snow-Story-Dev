@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 public interface IDamageable
 {
     void TakeDamage(float amount);
@@ -6,6 +7,7 @@ public interface IDamageable
 
 public class Health : MonoBehaviour, IDamageable
 {
+    public UnityEvent OnDeath;
     public float maxHealth = 100f;
     public float currentHealth;
     public Animator animator;
@@ -28,11 +30,13 @@ public class Health : MonoBehaviour, IDamageable
             
         }
     }
-
-    void Die()
-    {
-        Debug.Log($"{gameObject.name} загинув.");
-        // Анімація смерті, видалення об'єкта, тощо
-        Destroy(gameObject);
+    [ContextMenu("Die")]
+   public void Die()
+    {   
+        animator.Play("Death");
+        OnDeath.Invoke();
+       
+       
+        
     }
 }
