@@ -17,7 +17,9 @@ public class MonsterMovement : MonoBehaviour
   	public float radius_offset = 0.1f;
     public LayerMask groundLayer;
     public bool isGrounded;
-
+    public bool useGravity = true; // Whether to apply gravity or not
+    public float freezeGravityTimer = 0f; // Timer to freeze gravity for a certain duration
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,15 +30,24 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        freezeGravityTimer -= Time.deltaTime; // Decrease the freeze timer
+        if (freezeGravityTimer <= 0f)
+        {
+            useGravity = true; // Re-enable gravity after the timer expires
+            freezeGravityTimer = 0f; // Reset the timer
+        }else
+        {
+            useGravity = false; // Disable gravity while the timer is active
+        }
     }
 
-    public void PushIntoDirection(Vector3 direction)
+    public void PushIntoDirection(Vector3 direction, float newFreezeGravity)
     {
 
 
         // Apply fading effect
         fadingVelocity = direction;
+        freezeGravityTimer = newFreezeGravity; // Set the freeze timer
     }
     public void ResetVeliocity()
     {
@@ -87,6 +98,11 @@ public class MonsterMovement : MonoBehaviour
    
    void CalculateGravity_FixedUpdate()
     {
+       if (!useGravity)
+        {
+            velocity.y = 0; // Reset vertical velocity if gravity is not used
+            return;
+        } 
         if (isGrounded)
         {
             velocity.y = 0;

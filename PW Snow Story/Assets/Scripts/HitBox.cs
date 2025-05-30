@@ -12,7 +12,10 @@ public class HitBox : MonoBehaviour
     private HashSet<IDamageable> damagedTargets = new HashSet<IDamageable>();
     private Collider hitBoxCollider;
     public Character masterCharacter;
-    public float pushForce = 5f; // Сила відштовхування
+    public float pushForwardForce = 5f; // Сила відштовхування
+    public float pushUpForce = 5f; // Сила відштовхування
+    public float newFadingSpeed = 0.5f; // Затримка для відштовхування вгору
+    
     public bool pushForward;
     public bool pushUp;
     public bool resetEnemyVelocity;    
@@ -46,9 +49,13 @@ public class HitBox : MonoBehaviour
             var targetMovement = other.GetComponent<MonsterMovement>();
             if (targetMovement != null)
             {
-                if (pushForward) targetMovement.PushIntoDirection(masterCharacter.targetPointer.transform.forward * pushForce);
-                if (pushUp) targetMovement.PushIntoDirection(Vector3.up * pushForce);
-                if (resetEnemyVelocity) {targetMovement.ResetVeliocity(); }
+                if (pushForward) targetMovement.PushIntoDirection(masterCharacter.targetPointer.transform.forward * pushForwardForce, 0);
+                if (pushUp)
+                {
+                    targetMovement.PushIntoDirection(Vector3.up * pushUpForce, 1f);
+                  
+                }
+                if (resetEnemyVelocity) { targetMovement.PushIntoDirection(Vector3.zero * pushUpForce, 1f ); }
             }
             audioSource.PlayOneShot(fleshHitSounds[Random.Range(0, fleshHitSounds.Length)]);
 

@@ -16,12 +16,17 @@ public class MeshBreaker : MonoBehaviour
         
         
     }
-
+    void MakeDeathSound()
+    {
+        var animationSound = GetComponent<AnimationSounds>();
+        animationSound?.PlaySound("SAO Death");
+    }
     public void MakeDeathAnimation()
     {
         BreakMeshIntoTriangles();
         SetTrianglesMaterial(triangleMaterial);
         StartCoroutine(FlyTriangles());
+
     }
     public Color emissionTargetColor = Color.white;
     public float emissionFadeDuration = 1f;
@@ -68,7 +73,7 @@ public class MeshBreaker : MonoBehaviour
                 }
             }
         }
-
+        
         while (timer < emissionFadeDuration)
         {
             float t = timer / emissionFadeDuration;
@@ -93,7 +98,7 @@ public class MeshBreaker : MonoBehaviour
                 kvp.Key.EnableKeyword("_EMISSION");
             }
         }
-
+        MakeDeathSound();
         // Вимикаємо всі рендерери після завершення емісії
         DisableOriginalMeshes();
     }
