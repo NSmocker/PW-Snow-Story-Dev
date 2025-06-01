@@ -45,9 +45,13 @@ public class PlayerController : MonoBehaviour
 		volume.profile.TryGet<MotionBlur>(out motionBlur);
 	}
 
-    public void BindPlayerSystems()
+	public void BindPlayerSystems()
 	{
 		directionPointer = characterToControll.directionPointer;
+		cameraSwitcher.orbitalCamera.Target.TrackingTarget = characterToControll.lookAtPoint;
+		cameraSwitcher.orbitalCamera.Target.LookAtTarget = characterToControll.lookAtPoint;
+		
+		
 		
 
 	

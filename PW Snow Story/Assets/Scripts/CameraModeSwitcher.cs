@@ -13,6 +13,7 @@ public class CameraModeSwitcher : MonoBehaviour
     
     [Header("Camera Offset")]  
     public CinemachineOrbitalFollow cameraOrbit;
+   
     public bool cameraOffseted;
  
 	public float offsetDistanceSpeed=0.1f;
