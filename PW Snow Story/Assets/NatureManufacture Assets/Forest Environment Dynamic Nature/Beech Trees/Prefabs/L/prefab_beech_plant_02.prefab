@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5001871497718003200
+--- !u!1 &1141479743118927529
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,103 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5001871497718295072}
-  - component: {fileID: 5001871497716967936}
-  - component: {fileID: 5001871497716000960}
+  - component: {fileID: 1141479743119424137}
+  - component: {fileID: 4818415780812709333}
   m_Layer: 0
-  m_Name: grass_beech_forest_02_1_LOD0
+  m_Name: prefab_beech_plant_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 81
+  m_StaticEditorFlags: 80
   m_IsActive: 1
---- !u!4 &5001871497718295072
+--- !u!4 &1141479743119424137
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003200}
+  m_GameObject: {fileID: 1141479743118927529}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2448658378034652125}
+  - {fileID: 8252434312721598015}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &4818415780812709333
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141479743118927529}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.0858264, y: 1.316639, z: -0.2675321}
+  m_Size: 2.6436915
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.2940547
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6825160552366960455}
+  - screenRelativeHeight: 0.06486263
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 495770419509863332}
+  m_Enabled: 1
+--- !u!1 &3854938273946587382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2448658378034652125}
+  - component: {fileID: 5016103489128204922}
+  - component: {fileID: 6825160552366960455}
+  m_Layer: 0
+  m_Name: beech_plant_02_LOD0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 81
+  m_IsActive: 1
+--- !u!4 &2448658378034652125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854938273946587382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5001871497718295074}
+  m_Father: {fileID: 1141479743119424137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5001871497716967936
+--- !u!33 &5016103489128204922
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003200}
-  m_Mesh: {fileID: 4300000, guid: 02a7ac27dfe42bf459d84cb1742a2390, type: 3}
---- !u!23 &5001871497716000960
+  m_GameObject: {fileID: 3854938273946587382}
+  m_Mesh: {fileID: 4300002, guid: e8a9d9eb000e0e34fb37ec72806c7282, type: 3}
+--- !u!23 &6825160552366960455
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003200}
+  m_GameObject: {fileID: 3854938273946587382}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +121,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: facfca73919a7ec49bf300f14a2ee4ff, type: 2}
+  - {fileID: 2100000, guid: 8ac9c1bc2b550544d8f7d8f65c92bcae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,7 +143,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5001871497718003202
+--- !u!1 &6015774026739123997
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,103 +151,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5001871497718295074}
-  - component: {fileID: 5001871497700621954}
+  - component: {fileID: 8252434312721598015}
+  - component: {fileID: 5582891139225657111}
+  - component: {fileID: 495770419509863332}
   m_Layer: 0
-  m_Name: prefab_grass_02_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 80
-  m_IsActive: 1
---- !u!4 &5001871497718295074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003202}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5001871497718295072}
-  - {fileID: 5001871497718295078}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &5001871497700621954
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003202}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.0309695, y: 0.1419323, z: -0.066162795}
-  m_Size: 0.7154342
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.25
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5001871497716000960}
-  - screenRelativeHeight: 0.04261814
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 5001871497716000966}
-  m_Enabled: 1
---- !u!1 &5001871497718003206
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5001871497718295078}
-  - component: {fileID: 5001871497716967942}
-  - component: {fileID: 5001871497716000966}
-  m_Layer: 0
-  m_Name: grass_beech_forest_02_1_LOD1
+  m_Name: beech_plant_02_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 81
   m_IsActive: 1
---- !u!4 &5001871497718295078
+--- !u!4 &8252434312721598015
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003206}
+  m_GameObject: {fileID: 6015774026739123997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5001871497718295074}
+  m_Father: {fileID: 1141479743119424137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5001871497716967942
+--- !u!33 &5582891139225657111
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003206}
-  m_Mesh: {fileID: 4300002, guid: 02a7ac27dfe42bf459d84cb1742a2390, type: 3}
---- !u!23 &5001871497716000966
+  m_GameObject: {fileID: 6015774026739123997}
+  m_Mesh: {fileID: 4300000, guid: e8a9d9eb000e0e34fb37ec72806c7282, type: 3}
+--- !u!23 &495770419509863332
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5001871497718003206}
+  m_GameObject: {fileID: 6015774026739123997}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -207,7 +207,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: facfca73919a7ec49bf300f14a2ee4ff, type: 2}
+  - {fileID: 2100000, guid: 8ac9c1bc2b550544d8f7d8f65c92bcae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

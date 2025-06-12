@@ -133,11 +133,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AORemapMax: 1
-    - _AORemapMin: 0
+    - _AORemapMax: 0.538
+    - _AORemapMin: 0.375
     - _ATDistance: 1
     - _AlbedoAffectEmissive: 0
-    - _AlphaCutoff: 0.653
+    - _AlphaCutoff: 0.21
     - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
@@ -148,7 +148,7 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _CoatMask: 0
-    - _ColorNoiseSpread: 2
+    - _ColorNoiseSpread: 24.79
     - _CullFarDistance: 20
     - _CullFarStart: 60
     - _CullMode: 0
@@ -233,9 +233,9 @@ Material:
     - _ShiverDirectionality: 0.405
     - _ShiverDrag: 0.1
     - _Smoothness: 1
-    - _SmoothnessRemapMax: 1
+    - _SmoothnessRemapMax: 0.142
     - _SmoothnessRemapMin: 0
-    - _Specular: 0.3
+    - _Specular: 1
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
     - _SrcBlend: 1
@@ -249,7 +249,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 64
     - _StencilWriteMaskGBuffer: 51
     - _StencilWriteMaskMV: 176
-    - _Stiffness: 1
+    - _Stiffness: 1.3
     - _SubsurfaceMask: 0
     - _SupportDBuffer: 0
     - _SupportDecals: 0

@@ -356,9 +356,9 @@ Material:
     - _Anisotropy: 0
     - _BarkAORemapMax: 1
     - _BarkAORemapMin: 0
-    - _BarkMetallic: 1
-    - _BarkNormalScale: 1
-    - _BarkSmoothnessRemapMax: 1
+    - _BarkMetallic: 0.51
+    - _BarkNormalScale: 0.39
+    - _BarkSmoothnessRemapMax: 0
     - _BarkSmoothnessRemapMin: 0
     - _BarkUseUV3: 1
     - _BlendMode: 0
@@ -564,7 +564,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 64
     - _StencilWriteMaskGBuffer: 51
     - _StencilWriteMaskMV: 176
-    - _Stiffness: 1
+    - _Stiffness: 1.3
     - _SubsurfaceMask: 1
     - _SubsurfaceMask0: 1
     - _SubsurfaceMask1: 1
@@ -592,11 +592,11 @@ Material:
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
     - _TransparentSortPriority: 0
-    - _TrunkAORemapMax: 1
+    - _TrunkAORemapMax: 0.906
     - _TrunkAORemapMin: 0
-    - _TrunkMetallic: 1
-    - _TrunkNormalScale: 1
-    - _TrunkSmoothnessRemapMax: 1
+    - _TrunkMetallic: 0.007
+    - _TrunkNormalScale: 4.61
+    - _TrunkSmoothnessRemapMax: 0.344
     - _TrunkSmoothnessRemapMin: 0
     - _UVBase: 0
     - _UVBase0: 0
