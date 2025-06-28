@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: e28e73b063920014aaabbff5f49d16ba
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_rcygo
+    second: {fileID: 2100000, guid: 56d1767d328cfde42a1e4dc629ece787, type: 2}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: T_rcygo_4K_B
+    second: {fileID: 2800000, guid: 067416277a1c4bf4782efe7caf3777c1, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: T_rcygo_4K_N.normal
+    second: {fileID: 2800000, guid: 67aafd1cd9e28dd4cad1549c82ab3f28, type: 3}
+  - first:
+      type: UnityEngine:Texture
+      assembly: UnityEngine.CoreModule
+      name: T_rcygo_4K_ORM.standard
+    second: {fileID: 2800000, guid: be794bfcbd08def4cbe3bb8e2969cfd8, type: 3}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: aecd2106718f2444db3ca21345da2cef, type: 3}
+  reverseAxis: 0
+  renderPipeline: 0

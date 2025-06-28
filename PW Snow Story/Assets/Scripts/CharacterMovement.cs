@@ -74,8 +74,8 @@ public class CharacterMovement : MonoBehaviour
  		velocity += gravity * Time.fixedDeltaTime * gravityMultiplier/10 ;
 		if ( isGrounded && velocity.y< 0f)
 		{
-		
-		  velocity.y=0;
+
+			velocity.y = -3f;
 		}
 		characterController.Move(velocity);
 		if(isFloating)velocity.y = 0;
