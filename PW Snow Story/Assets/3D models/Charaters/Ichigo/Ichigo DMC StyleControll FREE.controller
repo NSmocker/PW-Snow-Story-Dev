@@ -538,7 +538,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: movementMagnitude
     m_Mirror: 0
-  m_BlendParameter: movementMagnitude
+  m_BlendParameter: AgressionState
   m_BlendParameterY: movementMagnitude
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -798,6 +798,29 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!206 &-2023248679252111560
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BlendTree
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 69a33d6684df8404fa77bcf70d466afa, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: movementMagnitude
+    m_Mirror: 0
+  m_BlendParameter: Sprint
+  m_BlendParameterY: movementMagnitude
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!1101 &-1982411441361442001
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

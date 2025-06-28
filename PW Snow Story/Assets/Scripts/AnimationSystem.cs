@@ -127,6 +127,11 @@ public class AnimationSystem : MonoBehaviour
 		animator.SetBool("grounded", masterCharacter.movementSystem.isGrounded);
 		animator.SetBool("makeAttackJugglery", juggleryAttackKeyAttackKeyStickTime > 0);
 		animator.SetBool("makeAttackDefault", attackKeyStickTime > 0);
+		
+		// --- Плавний перехід agressionState ---
+		float targetAgression = (chillTimer > 0) ? 1f : 0f;
+		float agressionLerpSpeed = 1f / 0.5f; // за 0.5 секунди
+		agressionState = Mathf.MoveTowards(agressionState, targetAgression, agressionLerpSpeed * Time.deltaTime);
 		animator.SetFloat("AgressionState", agressionState);
 		
 	    

@@ -17,10 +17,7 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Scene' has import animation warnings that might
-      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'shin.L' has scale animation that will be discarded.\n\t'shin.R'
-      has scale animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -190,16 +187,16 @@ ModelImporter:
     - boneName: upper_arm.L
       humanName: LeftUpperArm
       limit:
-        min: {x: -90, y: -100, z: -86.12903}
-        max: {x: 90, y: 100, z: 73.87097}
+        min: {x: -90, y: -133.12, z: 0}
+        max: {x: 90, y: 65.44, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 1
     - boneName: upper_arm.R
       humanName: RightUpperArm
       limit:
-        min: {x: -90, y: -100, z: -86.12903}
-        max: {x: 90, y: 100, z: 73.87097}
+        min: {x: -90, y: -133.12, z: 0}
+        max: {x: 90, y: 65.44, z: 73.87097}
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 1
@@ -1184,7 +1181,7 @@ ModelImporter:
     foreArmTwist: 0.5
     upperLegTwist: 0.5
     legTwist: 0.5
-    armStretch: 0
+    armStretch: 0.049
     legStretch: 0
     feetSpacing: 0
     globalScale: 1
