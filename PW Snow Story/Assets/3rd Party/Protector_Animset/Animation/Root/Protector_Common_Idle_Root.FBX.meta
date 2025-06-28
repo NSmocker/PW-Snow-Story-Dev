@@ -537,14 +537,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: GetWeaponInBack
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask:
       - path: 
         weight: 1
@@ -1452,8 +1445,7 @@ ModelImporter:
     - name: ik_hand_r
       parentName: ik_hand_gun
       position: {x: -0, y: 0, z: 0.000000076293944}
-      rotation: {x: -0.000000022351745, y: 0.0000000074505793, z: 0.000000014901159,
-        w: 1}
+      rotation: {x: -0.000000022351745, y: 0.0000000074505793, z: 0.000000014901159, w: 1}
       scale: {x: 1.0000001, y: 0.9999999, z: 0.9999997}
     - name: ik_hand_l
       parentName: ik_hand_gun
@@ -1477,8 +1469,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c0c5dd0275493e44d9ef7418695dd3cd,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c0c5dd0275493e44d9ef7418695dd3cd, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1

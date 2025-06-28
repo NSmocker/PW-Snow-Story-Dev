@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class AnimationSystem : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class AnimationSystem : MonoBehaviour
 	public float chillTimeOut=15f;
 	public float chillTimer=0;
 	public float agressionState= 0f;
+
+	public TwoBoneIKConstraint rightHandRunIk;
 	
 
 	public AnimationCurve blockCurve;
@@ -113,9 +116,13 @@ public class AnimationSystem : MonoBehaviour
 		
 	}
 
+    // Додаємо enum для стану меча
+    private enum SwordState { OnSpine, InHand, InHandReverse }
+    private SwordState currentSwordState = SwordState.OnSpine;
+
 	void Update()
 	{
-
+		if (Input.GetKeyDown(KeyCode.G)) { Debug.Break(); }
 		if (Time.timeScale == 0) return;
 		Timers_Update();
 		isAttacking = attackStatusTime > 0;
@@ -133,7 +140,38 @@ public class AnimationSystem : MonoBehaviour
 		float agressionLerpSpeed = 1f / 0.5f; // за 0.5 секунди
 		agressionState = Mathf.MoveTowards(agressionState, targetAgression, agressionLerpSpeed * Time.deltaTime);
 		animator.SetFloat("AgressionState", agressionState);
-		
+
+		// --- Логіка положення меча та IK ---
+		SwordState newSwordState;
+		if (agressionState < 0.5f)
+			newSwordState = SwordState.OnSpine;
+		else if (isSprinting)
+			newSwordState = SwordState.InHandReverse;
+		else
+			newSwordState = SwordState.InHand;
+
+		if (newSwordState != currentSwordState)
+		{
+			switch (newSwordState)
+			{
+				case SwordState.OnSpine:
+					masterCharacter.GetWeaponInBack();
+					
+					break;
+				case SwordState.InHand:
+					masterCharacter.GetWeaponInArm();
+					
+					break;
+				case SwordState.InHandReverse:
+					masterCharacter.GetWeaponInArmBackGrip();
+					break;
+			}
+			currentSwordState = newSwordState;
+		}
+
+		// --- Weight IK для бігу ---
+		float targetIkWeight = (agressionState >= 0.5f && isSprinting) ? 1f :0;
+		rightHandRunIk.weight = Mathf.MoveTowards(rightHandRunIk.weight, targetIkWeight, Time.deltaTime * 10f);
 	    
     }
 }
