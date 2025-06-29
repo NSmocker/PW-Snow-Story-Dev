@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
 	public bool isAttacking;
 	public bool isMining;
 	
-
+	public Vector2 lastMoveInput;
 	
    	public CharacterMovement movementSystem;
 	public AnimationSystem animationSystem;
@@ -22,10 +22,25 @@ public class Character : MonoBehaviour
 	public DirectionPointer directionPointer;
 	public TargetPointer targetPointer;
     public Transform lookAtPoint;
-	
-	
 
 
+
+	void OnAnimatorMove()
+	{
+		if (animationSystem.animator == null) return;
+		// Отримуємо рух від аніматора
+		Vector3 deltaPosition = animationSystem.animator.deltaPosition;
+		// Якщо спринт, множимо на sprintMoveSpeedMultiplier
+		if (animationSystem.isSprinting)
+			deltaPosition *= animationSystem.sprintMoveSpeedMultiplier;
+		// Переміщуємо персонажа
+		transform.position += deltaPosition;
+		// Обертання залишаємо як є
+		transform.rotation = animationSystem.animator.rootRotation;
+		movementSystem.UpdateAnimatorMoveSpeed(animationSystem.animator.deltaPosition);
+		print(movementSystem.animatorMoveSpeed);
+		//print("Animator Move! " + deltaPosition + " | Sprint: " + animationSystem.isSprinting + " | Multiplier: " + animationSystem.sprintMoveSpeedMultiplier);
+	}
 
     // Start is called before the first frame update
     void Start()
@@ -91,7 +106,6 @@ public class Character : MonoBehaviour
 	 
 	public void HandleMovement_FixedUpdate(Vector2 moveVector)
 	{
-		
 		movementSystem.MoveByCamera(moveVector);
 		if(animationSystem.isBlocking)
 		{
@@ -109,7 +123,7 @@ public class Character : MonoBehaviour
 			if(moveVector.magnitude!=0 && !animationSystem.isAttacking )
 			{
 				movementSystem.RotateCharacterByCamera(moveVector,directionPointer.transform);
-				print("RotateCharacterByCamera");
+//				print("RotateCharacterByCamera");
 			}
 		}
 	}
@@ -123,7 +137,7 @@ public class Character : MonoBehaviour
 	public void GetWeaponInArm()
 	{
 		weapon.SetOnArm();
-		print("Set On Arm");	
+//		print("Set On Arm");	
 	}
 	public void GetWeaponInArmBackGrip()
 	{

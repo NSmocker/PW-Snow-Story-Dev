@@ -36,9 +36,8 @@ public class AnimationSystem : MonoBehaviour
 	public float chillTimeOut=15f;
 	public float chillTimer=0;
 	public float agressionState= 0f;
+	public float sprintMoveSpeedMultiplier = 1.5f; 
 
-	public TwoBoneIKConstraint rightHandRunIk;
-	
 
 	public AnimationCurve blockCurve;
 	public void SetBlockingState(bool BlockingState,float blockAxis)
@@ -169,9 +168,8 @@ public class AnimationSystem : MonoBehaviour
 			currentSwordState = newSwordState;
 		}
 
-		// --- Weight IK для бігу ---
-		float targetIkWeight = (agressionState >= 0.5f && isSprinting) ? 1f :0;
-		rightHandRunIk.weight = Mathf.MoveTowards(rightHandRunIk.weight, targetIkWeight, Time.deltaTime * 10f);
+		
 	    
     }
+	
 }

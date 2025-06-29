@@ -38,19 +38,35 @@ public class CharacterMovement : MonoBehaviour
     public LayerMask groundLayer;
     public bool isGrounded ;
 	
-	//Використовується коли персонаж в повітрі
-	public void MoveByCamera(Vector2 input)
+	public float animatorMoveSpeed; // Поточна швидкість від аніматора
+    private bool wasGroundedLastFrame = true;
+
+    // Викликається з AnimationSystem.OnAnimatorMove
+    public void UpdateAnimatorMoveSpeed(Vector3 deltaPosition)
+    {
+        // Швидкість у площині XZ
+        animatorMoveSpeed = new Vector2(deltaPosition.x, deltaPosition.z).magnitude / Time.deltaTime;
+    }
+
+    //Використовується коли персонаж в повітрі
+    public void MoveByCamera(Vector2 input)
 	{ 
 		if(input.magnitude>0.5 && !isGrounded)
 		{
-			if(!masterCharacter.isAttacking)characterController.Move(transform.forward*input.magnitude*moveSpeed*Time.fixedDeltaTime);
+			if(!masterCharacter.isAttacking)
+			{
+				// Використовуємо animatorMoveSpeed для плавності переходу
+				characterController.Move(transform.forward*input.magnitude*moveSpeed*Time.fixedDeltaTime);
+			}
 		} 
 	}
 	public void MakeJump()
 	{
 	
 		if (isGrounded)
-		{	wasComboInFloat=false;
+		{
+			moveSpeed = animatorMoveSpeed; 
+			wasComboInFloat =false;
 			isSecondJumpMaked = false;
 			velocity.y = jumpForce*Time.fixedDeltaTime;
 			audioSource.PlayOneShot(jumpSound);
@@ -119,8 +135,21 @@ public class CharacterMovement : MonoBehaviour
 
 	void FixedUpdate()
 	{	
+		/*// Відстежуємо перехід із grounded у повітря
+        if (wasGroundedLastFrame && !isGrounded)
+        {
+            // При стрибку moveSpeed = animatorMoveSpeed
+            moveSpeed = animatorMoveSpeed;
+        }*/
+		
+        wasGroundedLastFrame = isGrounded;
 		CheckGround_FixedUpdate();
 		MakeGravity_FixedUpdate();
+		// Додаємо ручний рух у повітрі
+		if (!isGrounded && masterCharacter != null)
+		{
+			MoveByCamera(masterCharacter.lastMoveInput);
+		}
 	}
    
 	void OnDrawGizmos()
