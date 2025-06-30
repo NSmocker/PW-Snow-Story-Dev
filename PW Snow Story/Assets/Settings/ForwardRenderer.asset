@@ -1,31 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9041755585948705498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
-  m_Name: ScreenSpaceAmbientOcclusion
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  m_Settings:
-    AOMethod: 1
-    Downsample: 1
-    AfterOpaque: 1
-    Source: 0
-    NormalSamples: 2
-    Intensity: 0.04
-    DirectLightingStrength: 0.25
-    Radius: 0.34
-    Samples: 0
-    BlurQuality: 0
-    Falloff: 71.2
-    SampleCount: -1
 --- !u!114 &-6991547536443715847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +40,8 @@ MonoBehaviour:
     probeSamplingDebugTexture: {fileID: 2800000, guid: 24ec0e140fb444a44ab96ee80844e18e, type: 3}
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
-  - {fileID: -9041755585948705498}
   - {fileID: -6991547536443715847}
-  m_RendererFeatureMap: 269d9f29333b8582f9ce03f48e08f99e
+  m_RendererFeatureMap: f9ce03f48e08f99e
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}

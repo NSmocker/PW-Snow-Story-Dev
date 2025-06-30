@@ -2,21 +2,34 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass_A_01
-  m_Shader: {fileID: 4800000, guid: fa42abba43233de4bac551c9b440ab0b, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _ENABLEWIND_ON _GRASSSIZE_ON _GRASSTINT_ON
-    _MOTIONNOISE_ON _MOTIONSPACE_WORLD _NORMALMAP _RENDERTYPE_CUT
+  m_Shader: {fileID: 4800000, guid: 14642f160589e354db97395ba4bdc651, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
+  - _BACKFACEMIRRORNORMAL_ON
+  - _EMISSION
+  - _ENABLEWIND_ON
+  - _GRASSSIZE_ON
+  - _GRASSTINT_ON
+  - _MOTIONNOISE_ON
+  - _MOTIONSPACE_WORLD
+  - _NORMALMAP
+  - _RENDERTYPE_CUT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -118,6 +131,7 @@ Material:
     - _AOIntensity: 1
     - _Advanced: 0
     - _AlphaCutoff: 0.5
+    - _BackFaceMirrorNormal: 1
     - _BackFaceSnow: 1
     - _BaseBottomOffset: 0.3
     - _BaseNormalIntensity: 1.968
@@ -125,9 +139,13 @@ Material:
     - _BaseTreeAO: 1
     - _BottomOffset: 0.22
     - _BumpScale: 1
+    - _ColorNoiseSpread: 15
+    - _CullFarDistance: 5
+    - _CullFarStart: 40
     - _CullMode: 0
     - _Cutoff: 0.4
     - _DetailNormalMapScale: 1
+    - _Drag: 1
     - _DstBlend: 0
     - _EnableWind: 1
     - _EnableWorldProjection: 0
@@ -141,12 +159,14 @@ Material:
     - _GlossyReflections: 1
     - _GrassSize: 1
     - _GrassTint: 1
+    - _InitialBend: 1
     - _Main: 0
     - _MaskAxis: 1
     - _MaskMax: 1
     - _MaskMin: 0
     - _MaskType: 0
     - _Metallic: 0
+    - _MetallicPower: 0
     - _Mode: 1
     - _Motion: 0
     - _MotionAmplitude: 1
@@ -162,12 +182,16 @@ Material:
     - _QueueControl: -1
     - _QueueOffset: 0
     - _Settings: 0
+    - _ShiverDirectionality: 0.5
+    - _ShiverDrag: 0.05
     - _Show_MaskGeneric: 1
     - _Smoothness: 0.5
+    - _SmoothnessPower: 0
     - _SmoothnessTextureChannel: 0
     - _Specular: 0.413
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stiffness: 1
     - _Strenght: 6.24
     - _Surafce: 0
     - _TintNoiseContrast: 10
@@ -180,6 +204,7 @@ Material:
     - _TopOffset: 1
     - _TopSmoothness: 1
     - _TopUVScale: 10
+    - _TouchReactActive: 0
     - _Transmission: 1
     - _TransmissionDistance: 500
     - _TransmissionIntensity: 0.65
@@ -187,12 +212,14 @@ Material:
     - _TransmissionStrenght: 2
     - _UVSec: 0
     - _WindAmplitude: 0.5
+    - _WindColorThreshold: 1
     - _WindGrassStiffness: 1
     - _WindIntensity: 0.5
     - _WindLocalIntensity: 0.3
     - _WindLocalScale: 20
     - _WindLocalSpeed: 2.5
     - _WindMultiplier: 0.611
+    - _WindNormalInfluence: 0
     - _WindScale: 10
     - _WindSpeed: 4
     - _WindStiffness: 2.5
@@ -206,14 +233,19 @@ Material:
     - _BottomColor: {r: 0.5147059, g: 0.5147059, b: 0.5147059, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0.22794116, g: 0.22794116, b: 0.22794116, a: 0}
+    - _DryColor: {r: 0.875, g: 0.8280551, b: 0.7270221, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HealthyColor: {r: 1, g: 1, b: 1, a: 1}
     - _LocalDirection: {r: 0, g: 0, b: 1, a: 0}
     - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _NewNormal: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor1: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor2: {r: 0.8897059, g: 0.77501863, b: 0.68690526, a: 1}
     - _TopColor: {r: 0.72794116, g: 0.72794116, b: 0.72794116, a: 1}
     - _WaveAndDistance: {r: 12, g: 3.6, b: 1, a: 1}
     - _WavingTint: {r: 0.7, g: 0.6, b: 0.5, a: 1}
+    - _WindColorInfluence: {r: 0, g: 0, b: 0, a: 0}
     - _WindCycles: {r: 4, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
