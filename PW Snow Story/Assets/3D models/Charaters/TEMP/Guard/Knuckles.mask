@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Knuckles
+  m_Mask: 00000000000000000000000000000000000000000000000000000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: _0
+    m_Weight: 1
+  - m_Path: Bip01
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01LThigh
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01LThigh/Bip01LCalf
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01LThigh/Bip01LCalf/Bip01LFoot
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01LThigh/Bip01LCalf/Bip01LFoot/Bip01LToe0
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01LThigh/Bip01LCalf/Bip01LFoot/Bip01LToe0/Bip01LToe0_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01RThigh
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01RThigh/Bip01RCalf
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01RThigh/Bip01RCalf/Bip01RFoot
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01RThigh/Bip01RCalf/Bip01RFoot/Bip01RToe0
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01RThigh/Bip01RCalf/Bip01RFoot/Bip01RToe0/Bip01RToe0_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01Head
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01Head/Bip01Head_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand/Bip01LFinger0
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand/Bip01LFinger0/Bip01LFinger01
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand/Bip01LFinger0/Bip01LFinger01/Bip01LFinger01_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand/Bip01LFinger1
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand/Bip01LFinger1/Bip01LFinger11
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01LClavicle/Bip01LUpperArm/Bip01LForearm/Bip01LHand/Bip01LFinger1/Bip01LFinger11/Bip01LFinger11_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand/Bip01RFinger0
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand/Bip01RFinger0/Bip01RFinger01
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand/Bip01RFinger0/Bip01RFinger01/Bip01RFinger01_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand/Bip01RFinger1
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand/Bip01RFinger1/Bip01RFinger11
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bip01Spine/Bip01Spine1/Bip01Spine2/Bip01Neck/Bip01RClavicle/Bip01RUpperArm/Bip01RForearm/Bip01RHand/Bip01RFinger1/Bip01RFinger11/Bip01RFinger11_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bone01
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bone01/Bone02
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bone01/Bone02/Bone02_end
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bone03
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bone03/Bone04
+    m_Weight: 1
+  - m_Path: Bip01/Bip01Pelvis/Bone03/Bone04/Bone04_end
+    m_Weight: 1
+  - m_Path: Eyes
+    m_Weight: 1
+  - m_Path: Face
+    m_Weight: 1
+  - m_Path: Hair
+    m_Weight: 1
+  - m_Path: objdefault05_0
+    m_Weight: 1
+  - m_Path: Object01_0
+    m_Weight: 1
+  - m_Path: "\u7537\u8FF7\u5F69\u519B\u88C5_\u978B\u5B5001_0"
+    m_Weight: 1
