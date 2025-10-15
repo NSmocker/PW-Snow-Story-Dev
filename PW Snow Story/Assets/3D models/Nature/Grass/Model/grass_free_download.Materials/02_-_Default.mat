@@ -3,7 +3,7 @@
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -118,8 +118,8 @@ Material:
     - _ClearCoatSmoothness: 0
     - _ColorNoiseSpread: 4.75
     - _Cull: 0
-    - _CullFarDistance: 200
-    - _CullFarStart: 20
+    - _CullFarDistance: 142.7
+    - _CullFarStart: 133.6
     - _Cutoff: 0.5
     - _DISTANCEBLEND: 1
     - _DetailAlbedoMapScale: 1
