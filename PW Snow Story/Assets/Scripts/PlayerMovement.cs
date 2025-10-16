@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadiusOffset = 0f; // Додатковий радіус для сфери перевірки землі
     [Tooltip("Додаткове зміщення по висоті для сфери перевірки землі")]
     public float checkSphereYOffset = 0f;
-    CameraDirectionPointer cameraDirectionPointer;
+    public CameraDirectionPointer cameraDirectionPointer;
+    public ClosestEnemyPointer closestEnemyPointer;
+    
 
 
     public float customVerticalVelocity;
@@ -66,27 +68,36 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateRotateion(Vector2 input)
     {
-        var magnitude = input.magnitude;
-         
-        if (magnitude > 0.01f)
+        if (attackSnapTime > 0f &&  closestEnemyPointer.closestEnemy!=null)
         {
-            // Отримати локальний напрямок вперед Direction Pointer
-            Vector3 forward = cameraDirectionPointer.transform.forward;
-            forward.y = 0; // ігнорувати вертикальну складову
-
-            // Отримати напрямок руху гравця відносно інпуту
-            Vector3 moveDir = new Vector3(input.x, 0, input.y);
-
-            // Перетворити moveDir у світові координати через напрямок forward
-            Quaternion cameraRotation = Quaternion.LookRotation(forward);
-            Vector3 worldMoveDir = cameraRotation * moveDir;
-
-            // Розвернути персонажа у напрямку руху
-            if (worldMoveDir.sqrMagnitude > 0.001f)
+            transform.rotation = closestEnemyPointer.transform.rotation;
+            
+        }
+        else
+        {
+            var magnitude = input.magnitude;
+         
+            if (magnitude > 0.01f)
             {
-              transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(worldMoveDir),Time.deltaTime * 10f);
+                // Отримати локальний напрямок вперед Direction Pointer
+                Vector3 forward = cameraDirectionPointer.transform.forward;
+                forward.y = 0; // ігнорувати вертикальну складову
+
+                // Отримати напрямок руху гравця відносно інпуту
+                Vector3 moveDir = new Vector3(input.x, 0, input.y);
+
+                // Перетворити moveDir у світові координати через напрямок forward
+                Quaternion cameraRotation = Quaternion.LookRotation(forward);
+                Vector3 worldMoveDir = cameraRotation * moveDir;
+
+                // Розвернути персонажа у напрямку руху
+                if (worldMoveDir.sqrMagnitude > 0.001f)
+                {
+                transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(worldMoveDir),Time.deltaTime * 10f);
+                }
             }
         }
+        
 
 
 
