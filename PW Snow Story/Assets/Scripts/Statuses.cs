@@ -9,6 +9,7 @@ public class Statuses : MonoBehaviour
     public float isAwareTimer;
     public float isAwareTimerCD = 5f;
     WeaponChanger weaponChanger;
+    GamePlayModeManager gamePlayModeManager;
 
     [Header("Statuses")]
     public bool isAware;
@@ -23,6 +24,8 @@ public class Statuses : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         weaponChanger = GetComponent<WeaponChanger>();
+        gamePlayModeManager = GetComponent<GamePlayModeManager>();
+        print(gamePlayModeManager.currentGamePlayMode);
     }
 
     
@@ -30,16 +33,33 @@ public class Statuses : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isAware)
+        if (gamePlayModeManager.currentGamePlayMode == GamePlayModes.City)
         {
-            isAwareTimer -= Time.deltaTime;
-            if (isAwareTimer <= 0f)
-            {
-                isAware = false;
-                isAwareTimer = 0f;
-              if(weaponChanger != null)  weaponChanger.SheathWeapon();
-            }
+            print("Returning from Statuses Update due to City Mode");
+            isAware = false;
+            return;
         }
-        animator.SetBool("isAware", isAware);
+        else
+        {
+            if (isAware)
+            {
+                isAwareTimer -= Time.deltaTime;
+                if (isAwareTimer <= 0f) // якщо таймер вичерпано
+                {
+                    isAware = false;
+                    isAwareTimer = 0f;
+                    if (weaponChanger.currentWeaponState != WeaponState.Sheathed) //перевіряємо чи зброя не схована
+                    weaponChanger.SheathWeapon(); //ховаємо зброю
+                }
+                else
+                {
+                     if (weaponChanger.currentWeaponState != WeaponState.Equipped) //перевіряємо чи зброя не в руках
+                     weaponChanger.EquipWeapon(); //достаємо зброю
+                }
+            }
+            animator.SetBool("isAware", isAware);    
+        }
+        
+        
     }
 }

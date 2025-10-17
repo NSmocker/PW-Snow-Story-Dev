@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         {
             statuses.isAware = true;
             statuses.isAwareTimer = statuses.isAwareTimerCD;
-            weaponChanger.EquipWeapon();
+            //weaponChanger.EquipWeapon();
             attackSnapTime = attackSnapTimeCD;
             
         }

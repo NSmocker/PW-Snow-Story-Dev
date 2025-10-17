@@ -9,8 +9,8 @@ public class CityZone : MonoBehaviour
             GamePlayModeManager gamePlayModeManager = other.transform.GetComponent<GamePlayModeManager>();
             if (gamePlayModeManager != null)
             {
-                gamePlayModeManager.currentGamePlayMode = GamePlayModeManager.GamePlayModes.City;
-                gamePlayModeManager.SwitchGamePlayMode(GamePlayModeManager.GamePlayModes.City);
+                gamePlayModeManager.currentGamePlayMode = GamePlayModes.City;
+                gamePlayModeManager.SwitchGamePlayMode(GamePlayModes.City);
             }
         }
     }
@@ -22,8 +22,8 @@ public class CityZone : MonoBehaviour
             GamePlayModeManager gamePlayModeManager = other.transform.GetComponent<GamePlayModeManager>();
             if (gamePlayModeManager != null)
             {
-                gamePlayModeManager.currentGamePlayMode = GamePlayModeManager.GamePlayModes.Roaming;
-                gamePlayModeManager.SwitchGamePlayMode(GamePlayModeManager.GamePlayModes.Roaming);
+                gamePlayModeManager.currentGamePlayMode = GamePlayModes.Roaming;
+                gamePlayModeManager.SwitchGamePlayMode(GamePlayModes.Roaming);
             }
         }
     }

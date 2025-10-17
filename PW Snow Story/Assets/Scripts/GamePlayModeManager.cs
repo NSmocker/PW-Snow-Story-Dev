@@ -1,7 +1,11 @@
 
 using UnityEngine;
 using Unity.Cinemachine;
-
+public enum GamePlayModes
+    {
+        Roaming,
+        City
+    } 
 public class GamePlayModeManager : MonoBehaviour
 {
 
@@ -22,11 +26,7 @@ public class GamePlayModeManager : MonoBehaviour
     public Animator playerAnimator;
 
     private GamePlayModes lastGamePlayMode; // кеш останнього значення для виявлення змін
-   public enum GamePlayModes
-    {
-        Roaming,
-        City
-    } 
+   
     
 
     public void ApplyModeSettings()

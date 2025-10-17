@@ -64,11 +64,29 @@ public class AnimationSoundBinder : MonoBehaviour
         {
             if (clip != null && clip.name.ToLower().Contains("sword"))
             {
-            sword.Add(clip);
+                sword.Add(clip);
             }
-        }    
+        }
     }
 
+    public void PlayEffectByName(string clipName)
+    {
+        AudioClip clip = clips.Find(c => c != null && c.name == clipName);
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+    }
+    public void PlayEffectReversedByName(string clipName)
+    {
+        AudioClip clip = clips.Find(c => c != null && c.name == clipName);
+        if (clip != null && audioSource != null)
+        {
+            audioSource.pitch = -1f;
+            audioSource.PlayOneShot(clip);
+            audioSource.pitch = 1f;
+        }
+    }    
     void Start()
     {
         InitFootsteps();
